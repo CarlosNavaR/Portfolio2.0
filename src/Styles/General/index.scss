@@ -1,0 +1,12 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba($color: #111111, $alpha: 0.9);
+
+  h1 {
+    font-size: 3rem;
+    color: #fff;
+  }
+}
