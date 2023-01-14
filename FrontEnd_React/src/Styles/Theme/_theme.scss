@@ -1,0 +1,43 @@
+$themes: (
+  light: (
+    backgroundColor: #fff,
+    backgroundColorSecondary: #f5f5f5,
+    textColor: #408bbd,
+    textColorSecondary: #5A0834,
+    buttonTextColor: #408bbd,
+    buttonTextHoverColor: #61b0e7,
+    buttonColor: #fff,
+    buttonBorder: 2px solid #fff,
+    shadow: 0 5px 10px rgba(0, 0, 0, 0.1)
+  ),
+  dark: (
+    backgroundColor: #222,
+    backgroundColorSecondary: #333,
+    textColor: #fff,
+    textColorSecondary: #beaf41,
+    buttonTextColor: #aaa,
+    buttonTextHoverColor: #ddd,
+    buttonColor: #333,
+    buttonBorder: 1px solid #aaa,
+    shadow: 0 5px 10px rgba(77, 77, 77, 0.2)
+  ),
+);
+
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function buzTheme($key) {
+  @return map-get($theme-map, $key);
+}

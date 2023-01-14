@@ -1,0 +1,55 @@
+@import '../../Styles/Theme/theme';
+
+.react-select-container {
+  width: 10rem;
+  @include themed() {
+    color: buzTheme('textColorSecondary');
+    box-shadow: buzTheme('shadow');
+  }
+  border-radius: 8px;
+
+
+  .react-select__control {
+    cursor: pointer;
+    .react-select__indicators {
+      padding: 0 0.5rem;
+    }
+  }
+
+  .react-select__menu {
+    border: none;
+    @include themed() {
+      box-shadow: buzTheme('shadow');
+    }
+    border-radius: inherit;
+    margin-bottom: 1rem;
+
+    .react-select__menu-list {
+      margin: 0.5rem;
+
+      .react-select__option {
+        padding: 0.5rem 0;
+        border-radius: 0.5rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.react-select__option--is-selected {
+  @include themed() {
+    background-color: buzTheme('backgroundColorSecondary') ;
+    color: buzTheme('textColor') ;
+  }
+}
+
+.select_item {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  @include themed() {
+    color: buzTheme('textColorSecondary');
+  }
+}

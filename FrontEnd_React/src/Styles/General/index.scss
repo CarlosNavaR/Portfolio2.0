@@ -1,0 +1,32 @@
+@import '../Theme/theme';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.App {
+  @include themed() {
+    background-color: buzTheme('backgroundColor');
+  }
+
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 3.5rem 1fr 3.5rem;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+
+  .app_navbar {
+    grid-area: header;
+  }
+
+  .app_body {
+    grid-area: main;
+  }
+
+  .app_footer {
+    grid-area: footer;
+  }
+}
