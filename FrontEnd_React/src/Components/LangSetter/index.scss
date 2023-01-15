@@ -8,11 +8,11 @@
   }
   border-radius: 8px;
 
-
   .react-select__control {
     cursor: pointer;
     .react-select__indicators {
       padding: 0 0.5rem;
+      transition: all 0.3s linear;
     }
   }
 
@@ -38,8 +38,15 @@
 
 .react-select__option--is-selected {
   @include themed() {
-    background-color: buzTheme('backgroundColorSecondary') ;
-    color: buzTheme('textColor') ;
+    background-color: buzTheme('backgroundColorSecondary');
+    color: buzTheme('textColor');
+  }
+}
+
+.react-select__control--menu-is-open {
+  .react-select__indicators {
+    rotate: 180deg;
+    transition: all 0.3s linear;
   }
 }
 

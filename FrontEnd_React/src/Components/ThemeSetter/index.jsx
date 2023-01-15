@@ -25,8 +25,8 @@ export default function ThemeSetter() {
             aria-hidden='true'
           >
             <div className='box_switch__content'>
-              <span>{option.icon}</span>
-              {option.value}
+              <span className='box_switch_icon'>{option.icon}</span>
+              <span>{option.value}</span>
             </div>
           </li>
         ))}

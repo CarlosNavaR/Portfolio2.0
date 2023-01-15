@@ -26,6 +26,7 @@ $themes: (
 
 @mixin themed() {
   @each $theme, $map in $themes {
+    transition: all 0.4s linear;
     .theme--#{$theme} & {
       $theme-map: () !global;
       @each $key, $submap in $map {
