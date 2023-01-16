@@ -24,7 +24,7 @@ export default function ThemeSetter() {
           >
             <div className='box_switch__content'>
               <span className='box_switch_icon'>{option.icon}</span>
-              <span>{option.value}</span>
+              <span className='box_switch_text'>{option.value}</span>
             </div>
           </li>
         ))}
