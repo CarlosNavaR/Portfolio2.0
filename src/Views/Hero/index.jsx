@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import Lottie from 'react-lottie';
 import { motion } from 'framer-motion';
 import { BiDownArrowAlt } from 'react-icons/bi';
@@ -78,7 +78,7 @@ export default function index() {
   const [current, setCurrent] = useState(0);
   const textTranslate = "Hi, I'm";
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const id = setInterval(() => {
       setCurrent(state => {
         if (state >= items.length - 1) return 0;
@@ -123,7 +123,7 @@ export default function index() {
                 ease: 'anticipate',
               }}
             >
-              <span id='flip'>{items[current].content}</span>
+              <span className='flip'>{items[current].content}</span>
             </motion.div>
           </div>
 

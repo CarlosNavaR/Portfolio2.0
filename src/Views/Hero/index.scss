@@ -34,7 +34,7 @@
           color: buzTheme('textColor');
         }
 
-        #flip {
+        .flip {
           margin-left: 0.5rem;
 
           @include themed() {
