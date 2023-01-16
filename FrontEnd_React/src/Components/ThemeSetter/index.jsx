@@ -17,9 +17,7 @@ export default function ThemeSetter() {
       <ul className='box_switch'>
         {themeOptions.map(option => (
           <li
-            className={`box_switch__item ${
-              theme === option.value ? 'active' : ''
-            }`}
+            className={`box_switch__item ${theme === option.value && 'active'}`}
             key={option.value}
             onClick={() => setTheme(option.value)}
             aria-hidden='true'

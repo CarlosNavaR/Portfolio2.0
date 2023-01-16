@@ -9,24 +9,24 @@
   @include themed() {
     background-color: buzTheme('backgroundColor');
   }
+  overflow-y: auto;
+  overflow-x: hidden !important;
 
-  display: grid;
+
+  .app_body_container {
+    width:200%;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
+
+.panel {
+  width: 100vw;
   height: 100vh;
-  grid-template-rows: 3.5rem 1fr 3.5rem;
-  grid-template-areas:
-    'header'
-    'main'
-    'footer';
-
-  .app_navbar {
-    grid-area: header;
-  }
-
-  .app_body {
-    grid-area: main;
-  }
-
-  .app_footer {
-    grid-area: footer;
-  }
+  font-size: 30px;
+  background-color: lightcoral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

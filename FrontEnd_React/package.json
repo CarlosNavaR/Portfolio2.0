@@ -12,12 +12,16 @@
   "dependencies": {
     "@sanity/client": "^4.0.1",
     "@sanity/image-url": "^1.0.1",
+    "framer-motion": "^8.4.3",
+    "gsap": "3.6.1",
     "i18next": "^22.4.9",
+    "jquery": "^3.6.3",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.1.4",
     "react-icons": "^4.7.1",
+    "react-lottie": "^1.2.3",
     "react-router-dom": "^6.6.2",
     "react-select": "^5.7.0",
     "sass": "^1.57.1"
