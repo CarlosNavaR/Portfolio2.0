@@ -1,0 +1,87 @@
+@import '../../Styles/Theme/theme';
+
+.hero {
+  flex: 1;
+  height: 90vh;
+  overflow: hidden;
+  flex-direction: row;
+
+  .Content {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include themed() {
+      color: buzTheme('backgroundColor');
+    }
+
+    .app_header_circles {
+      flex: 0.75;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      margin-left: 1rem;
+      height: 350px;
+
+
+      .icon_circle {
+        border-radius: 50%;
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include themed() {
+          box-shadow: buzTheme('shadow');
+        }
+
+        &:nth-child(odd) {
+          width: 2rem;
+          height: 2rem;
+
+          i {
+            font-size: 1.5rem;
+          }
+        }
+
+        &:nth-child(even) {
+          width: 2rem;
+          height: 2rem;
+          i {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+    .hero_img {
+      position: absolute;
+    }
+  }
+
+  .scroll_down {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    bottom: 4rem;
+    left: 50%;
+    margin-left: -100px;
+    font-size: 1.2rem;
+    text-align: center;
+    gap: 0.5rem;
+    @include themed() {
+      color: buzTheme('textColorSecondary');
+    }
+
+    .icon-down {
+      font-size: 2em;
+      @include themed() {
+        box-shadow: buzTheme('shadow');
+        border-radius: 0.8rem;
+      }
+    }
+  }
+}

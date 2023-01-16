@@ -1,0 +1,16 @@
+@import '../../Styles/Theme/theme';
+
+.footer {
+  @include themed() {
+    background-color: buzTheme('backgroundColor');
+    color: buzTheme('textColorSecondary');
+    box-shadow: buzTheme('shadow');
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+}

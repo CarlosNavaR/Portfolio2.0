@@ -1,0 +1,32 @@
+@import '../Theme/theme';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+.App {
+  @include themed() {
+    background-color: buzTheme('backgroundColor');
+  }
+  overflow-y: auto;
+  overflow-x: hidden !important;
+
+
+  .app_body_container {
+    width:200%;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
+
+.panel {
+  width: 100vw;
+  height: 100vh;
+  font-size: 30px;
+  background-color: lightcoral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
