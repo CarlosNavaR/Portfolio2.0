@@ -1,7 +1,8 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Nav, Footer } from '../../Components';
+import About from '../About';
 import Hero from '../Hero';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -15,7 +16,7 @@ export default function index() {
     panels.current[position] = panel;
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const sections = panels.current.length;
 
     gsap.to(panels.current, {
@@ -25,7 +26,7 @@ export default function index() {
         trigger: containerRef.current,
         pin: true,
         scrub: 1,
-        // markers: true,
+        markers: true,
         snap: 1 / (sections - 1),
         end: () => window.innerWidth * 2,
         anticipatePin: 1,
@@ -48,14 +49,13 @@ export default function index() {
       <Hero />
       <div className='app_body_container' ref={containerRef}>
         <section className='panel' ref={e => createPanelsRefs(e, 0)}>
-          a
+          <About />
         </section>
         <section className='panel' ref={e => createPanelsRefs(e, 1)}>
           b
         </section>
       </div>
       <Hero />
-
       <Footer />
     </div>
   );

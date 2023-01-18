@@ -1,0 +1,48 @@
+@import '../../Styles/Theme/theme';
+
+.About_container {
+  width: 100%;
+  border-radius: 1rem;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+
+  @include themed() {
+    background-color: buzTheme('backgroundColor');
+    color: buzTheme('textColor');
+  }
+
+  .About_container__image {
+    flex: 0.6;
+    padding: 1rem;
+  }
+
+  .About_container_description {
+    flex: 1;
+    height: 90%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 2.7rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 0;
+
+    .About_container__image {
+      flex: 0.6;
+      display: flex;
+      align-items: flex-end;
+    }
+    .About_container_description {
+      line-height: 2rem;
+      flex: 1;
+      justify-content: flex-start;
+    }
+  }
+}

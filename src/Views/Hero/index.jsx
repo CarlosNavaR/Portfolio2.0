@@ -70,7 +70,10 @@ const languagesClass = [
 ];
 
 const items = [
-  { id: 0, content: 'Buz🚀' },
+  {
+    id: 0,
+    content: 'Buz 🚀',
+  },
   { id: 1, content: 'Carlos' },
 ];
 
@@ -108,7 +111,6 @@ export default function index() {
         <div className='hero_img'>
           <Lottie options={defaultOptions} height={300} width={300} />
         </div>
-
         <div className='hero_about'>
           <div className='hero_about_title'>
             {useTranslate(textTranslate)}
