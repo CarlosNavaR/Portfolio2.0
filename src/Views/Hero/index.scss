@@ -1,13 +1,14 @@
 @import '../../Styles/Theme/theme';
 
 .hero {
-  height: 90vh;
+  flex: 1;
+  width: 100vw;
   overflow: hidden;
   flex-direction: row;
 
   .Content {
     width: 100vw;
-    height: 90vh;
+    height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -208,7 +209,7 @@
   }
 
   .scroll_down {
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;

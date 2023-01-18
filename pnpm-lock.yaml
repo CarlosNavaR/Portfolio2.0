@@ -15,7 +15,7 @@ specifiers:
   eslint-plugin-react: ^7.32.0
   eslint-plugin-react-hooks: ^4.6.0
   framer-motion: ^8.4.3
-  gsap: 3.6.1
+  gsap: ^3.11.4
   i18next: ^22.4.9
   jquery: ^3.6.3
   prettier: ^2.8.2
@@ -24,6 +24,7 @@ specifiers:
   react-dom: ^18.2.0
   react-i18next: ^12.1.4
   react-icons: ^4.7.1
+  react-intersection-observer: ^9.4.1
   react-lottie: ^1.2.3
   react-router-dom: ^6.6.2
   react-select: ^5.7.0
@@ -34,7 +35,7 @@ dependencies:
   '@sanity/client': 4.0.1
   '@sanity/image-url': 1.0.1
   framer-motion: 8.4.3_biqbaboplfbrettd7655fr4n2y
-  gsap: 3.6.1
+  gsap: 3.11.4
   i18next: 22.4.9
   jquery: 3.6.3
   prop-types: 15.8.1
@@ -42,6 +43,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-i18next: 12.1.4_iakk3dtjhjpukdoa4oua5khgci
   react-icons: 4.7.1_react@18.2.0
+  react-intersection-observer: 9.4.1_react@18.2.0
   react-lottie: 1.2.3_react@18.2.0
   react-router-dom: 6.6.2_biqbaboplfbrettd7655fr4n2y
   react-select: 5.7.0_vwskmg7mzf6u2jufkkmcrhvxcm
@@ -1893,8 +1895,8 @@ packages:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
     dev: true
 
-  /gsap/3.6.1:
-    resolution: {integrity: sha512-hCkjk7UVbeEmlpFbiy7lIsh742bwVlMhdCnnQ1CvVOAdURyPX8hXjFZGh/0YzUyAcWPyJPE0/paMhSYtLhGlfA==}
+  /gsap/3.11.4:
+    resolution: {integrity: sha512-McHhEguHyExMMnjqKA8G+7TvxmlKQGMbjgwAilnFe1e4id7V/tFveRQ2YMZhTYu0oxHGWvbPltdVYQOu3z1SCA==}
     dev: false
 
   /has-bigints/1.0.2:
@@ -2592,6 +2594,14 @@ packages:
     resolution: {integrity: sha512-yHd3oKGMgm7zxo3EA7H2n7vxSoiGmHk5t6Ou4bXsfcgWyhfDKMpyKfhHR6Bjnn63c+YXBLBPUql9H4wPJM6sXw==}
     peerDependencies:
       react: '*'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
+  /react-intersection-observer/9.4.1_react@18.2.0:
+    resolution: {integrity: sha512-IXpIsPe6BleFOEHKzKh5UjwRUaz/JYS0lT/HPsupWEQou2hDqjhLMStc5zyE3eQVT4Fk3FufM8Fw33qW1uyeiw==}
+    peerDependencies:
+      react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 18.2.0
     dev: false
