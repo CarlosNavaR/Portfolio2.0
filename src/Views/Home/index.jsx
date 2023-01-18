@@ -8,30 +8,25 @@ import Hero from '../Hero';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function index() {
-  const panels = useRef([]);
-  const containerRef = useRef();
-  const appRef = useRef();
-
-  const createPanelsRefs = (panel, position) => {
-    panels.current[position] = panel;
-  };
+  const component = useRef();
+  const slider = useRef();
 
   useLayoutEffect(() => {
-    const sections = panels.current.length;
-
-    gsap.to(panels.current, {
-      xPercent: -100 * (sections - 1),
-      ease: 'none',
-      scrollTrigger: {
-        trigger: containerRef.current,
-        pin: true,
-        scrub: 1,
-        markers: true,
-        snap: 1 / (sections - 1),
-        end: () => window.innerWidth * 2,
-        anticipatePin: 1,
-      },
-    });
+    const ctx = gsap.context(() => {
+      const panels = gsap.utils.toArray('.panel');
+      gsap.to(panels, {
+        xPercent: -100 * (panels.length - 1),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: slider.current,
+          pin: true,
+          scrub: 1,
+          // markers: true,
+          snap: 1 / (panels.length - 1),
+          end: () => `+=${slider.current.offsetWidth}`,
+        },
+      });
+    }, component);
 
     gsap.to('progress', {
       value: 100,
@@ -41,22 +36,27 @@ export default function index() {
         scrub: 0.3,
       },
     });
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <div className='App' ref={appRef}>
+    <div className='App' ref={component}>
       <Nav />
-      <Hero />
-      <div className='app_body_container' ref={containerRef}>
-        <section className='panel' ref={e => createPanelsRefs(e, 0)}>
-          <About />
-        </section>
-        <section className='panel' ref={e => createPanelsRefs(e, 1)}>
-          b
-        </section>
+      <div className='first_container'>
+        <Hero />
       </div>
-      <Hero />
-      <Footer />
+      <div ref={slider} className='container'>
+        <div className='panel'>
+          <About />
+        </div>
+        <div className='panel'>Projects</div>
+        <div className='panel' />
+      </div>
+      <div className='last_container'>
+        <Hero />
+        <Footer />
+      </div>
     </div>
   );
 }
