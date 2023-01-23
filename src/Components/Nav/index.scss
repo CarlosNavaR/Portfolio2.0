@@ -3,9 +3,9 @@
 nav {
   position: relative;
   width: 100%;
+  background-color: transparent !important;
 
   @include themed() {
-    background-color: buzTheme('backgroundColor');
     color: buzTheme('textColor');
     box-shadow: buzTheme('shadow');
   }
@@ -63,7 +63,6 @@ nav {
   @media screen and (min-width: 800px) {
       .nav-center {
         @include themed() {
-          background-color: buzTheme('backgroundColor');
           color: buzTheme('textColor');
           box-shadow: buzTheme('shadow');
         }

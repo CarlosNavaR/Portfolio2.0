@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Nav, Footer } from '../../Components';
 import About from '../About';
 import Hero from '../Hero';
+import Projects from '../Projects';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,7 +51,9 @@ export default function index() {
         <div className='panel'>
           <About />
         </div>
-        <div className='panel'>Projects</div>
+        <div className='panel'>
+          <Projects />
+        </div>
         <div className='panel' />
       </div>
       <div className='last_container'>

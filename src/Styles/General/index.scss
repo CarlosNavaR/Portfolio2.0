@@ -6,10 +6,33 @@
 }
 
 .App {
+  background-image: url('https://assets.codepen.io/1538474/star.svg') !important;
   @include themed() {
     background-color: buzTheme('backgroundColor');
   }
+  -webkit-animation: move-twink 800s linear infinite;
+  animation: move-twink 800s linear infinite;
 }
+
+
+@-webkit-keyframes move-twink {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -10000px 0;
+  }
+}
+
+@keyframes move-twink {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -10000px 0;
+  }
+}
+
 
 html {
   overflow-y: scroll;
