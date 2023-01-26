@@ -25,6 +25,7 @@ export default function index() {
           // markers: true,
           snap: 1 / (panels.length - 1),
           end: () => `+=${slider.current.offsetWidth}`,
+          anticipatePin: 1,
         },
       });
     }, component);
@@ -33,7 +34,7 @@ export default function index() {
       value: 100,
       ease: 'none',
       scrollTrigger: {
-        trigger: '.app_body_container',
+        trigger: '.App',
         scrub: 0.3,
       },
     });

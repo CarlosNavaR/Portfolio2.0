@@ -5,13 +5,13 @@
   display: block;
   position: relative;
   @include themed() {
-    color: buzTheme('textColorSecondary');
+    color: buzTheme('textSecondary');
     box-shadow: buzTheme('shadow');
   }
   width: 12rem;
 
   .box_switch {
-    padding: 8px;
+    padding: 0.3rem;
     display: flex;
     justify-content: center;
     list-style: none;
@@ -31,18 +31,16 @@
       }
 
       &.active {
-        border-radius: 12px;
+        border-radius: 0.6rem;
         @include themed() {
-          background-color: buzTheme('backgroundColorSecondary');
-          color: buzTheme('textColor');
+          background-color: buzTheme('accentMain');
+          color: buzTheme('backgroundColor');
         }
 
         .box_switch_icon {
           rotate: 360deg;
           transition: all 0.6s linear;
         }
-
-
       }
     }
   }

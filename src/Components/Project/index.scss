@@ -1,0 +1,83 @@
+@import '../../Styles/Theme/theme';
+
+.project_card {
+  height: 20rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .project_card__image {
+    height: 20rem;
+    flex: 0.5;
+    border-radius: 0.5rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      filter: grayscale(100%);
+
+      &:hover {
+        filter: grayscale(0%);
+      }
+    }
+  }
+
+  .project_card_container {
+    flex: 1;
+    display: flex;
+    gap: 0.3rem;
+    flex-direction: column;
+    @include themed() {
+      color: buzTheme('textColorSecondary');
+    }
+
+    h1 {
+      font-weight: 600;
+      font-size: 1.8rem;
+      margin-left: 0.5rem;
+      @include themed() {
+        color: buzTheme('accentMain');
+      }
+    }
+
+    .project_card__details {
+      margin-left: -1.5rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @include themed() {
+        background-color: buzTheme('backgroundColorSecondary');
+        color: buzTheme('textPrimary');
+        box-shadow: buzTheme('shadow');
+        border: buzTheme('border');
+      }
+      height: 15rem;
+      border-radius: 0.5rem;
+      padding: 1rem;
+
+      p {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .project_card__details__links {
+        display: flex;
+        gap: 0.5rem;
+        font-size: 1.2rem;
+        justify-content: flex-end;
+
+        a {
+          @include themed() {
+            color: buzTheme('textPrimary');
+          }
+        }
+      }
+    }
+  }
+}

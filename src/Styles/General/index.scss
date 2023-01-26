@@ -6,14 +6,10 @@
 }
 
 .App {
-  background-image: url('https://assets.codepen.io/1538474/star.svg') !important;
   @include themed() {
     background-color: buzTheme('backgroundColor');
   }
-  -webkit-animation: move-twink 800s linear infinite;
-  animation: move-twink 800s linear infinite;
 }
-
 
 @-webkit-keyframes move-twink {
   0% {
@@ -33,7 +29,6 @@
   }
 }
 
-
 html {
   overflow-y: scroll;
   height: 100%;
@@ -49,6 +44,7 @@ body {
   width: 300vw;
   height: 100vh;
   display: flex;
+  align-items: center;
   flex-wrap: nowrap;
 }
 
@@ -65,10 +61,8 @@ body {
 
 .panel {
   width: 100vw;
-  height: 100vh;
-  font-size: 30px;
+  height: 95vh;
   display: flex;
-  justify-content: center;
-  text-align: center;
   padding: 0.4rem;
+  justify-content: center;
 }

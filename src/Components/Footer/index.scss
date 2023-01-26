@@ -3,8 +3,7 @@
 .footer {
   @include themed() {
     background-color: buzTheme('backgroundColor');
-    color: buzTheme('textColorSecondary');
-    box-shadow: buzTheme('shadow');
+    color: buzTheme('textSecondary');
   }
   display: flex;
   justify-content: space-between;
