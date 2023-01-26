@@ -5,9 +5,9 @@ nav {
   width: 100%;
 
   @include themed() {
-    background-color: buzTheme('backgroundColor');
-    color: buzTheme('textColor');
+    color: buzTheme('textPrimary');
     box-shadow: buzTheme('shadow');
+    background-color: buzTheme('backgroundColor');
   }
 
   .nav-center {
@@ -19,7 +19,6 @@ nav {
 
       .logo {
         height: 1.5rem;
-
       }
 
       .nav-toggle {
@@ -51,7 +50,7 @@ nav {
 
           &:hover {
             @include themed() {
-              color: buzTheme('textColorSecondary');
+              color: buzTheme('primaryMain');
             }
             padding-left: 0.5rem;
           }
@@ -61,46 +60,45 @@ nav {
   }
 
   @media screen and (min-width: 800px) {
-      .nav-center {
-        @include themed() {
-          background-color: buzTheme('backgroundColor');
-          color: buzTheme('textColor');
-          box-shadow: buzTheme('shadow');
+    .nav-center {
+      @include themed() {
+        color: buzTheme('textPrimary');
+        box-shadow: buzTheme('shadow');
+      }
+
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+
+      .nav-header {
+        padding: 0;
+
+        .nav-toggle {
+          display: none;
         }
+      }
 
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem;
+      .links-container {
+        height: auto !important;
 
-        .nav-header {
-          padding: 0;
+        .links {
+          display: flex;
 
-          .nav-toggle {
-            display: none;
-          }
-        }
+          a {
+            padding: 0;
+            margin: 0 0.5rem;
 
-        .links-container {
-          height: auto !important;
-
-          .links {
-            display: flex;
-
-            a {
+            &:hover {
               padding: 0;
-              margin: 0 0.5rem;
-
-              &:hover {
-                padding: 0;
-                @include themed() {
-                  color: buzTheme('textColorSecondary');
-                }
+              @include themed() {
+                color: buzTheme('primaryMain');
               }
             }
           }
         }
       }
     }
+  }
 }

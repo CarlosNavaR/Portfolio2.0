@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Nav, Footer } from '../../Components';
 import About from '../About';
 import Hero from '../Hero';
+import Projects from '../Projects';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,6 +25,7 @@ export default function index() {
           // markers: true,
           snap: 1 / (panels.length - 1),
           end: () => `+=${slider.current.offsetWidth}`,
+          anticipatePin: 1,
         },
       });
     }, component);
@@ -32,7 +34,7 @@ export default function index() {
       value: 100,
       ease: 'none',
       scrollTrigger: {
-        trigger: '.app_body_container',
+        trigger: '.App',
         scrub: 0.3,
       },
     });
@@ -50,7 +52,9 @@ export default function index() {
         <div className='panel'>
           <About />
         </div>
-        <div className='panel'>Projects</div>
+        <div className='panel'>
+          <Projects />
+        </div>
         <div className='panel' />
       </div>
       <div className='last_container'>

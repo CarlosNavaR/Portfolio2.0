@@ -5,6 +5,9 @@
   width: 100vw;
   overflow: hidden;
   flex-direction: row;
+  background-image: url('https://assets.codepen.io/1538474/star.svg') !important;
+  -webkit-animation: move-twink 800s linear infinite;
+  animation: move-twink 800s linear infinite;
 
   .Content {
     width: 100vw;
@@ -14,7 +17,7 @@
     justify-content: center;
     align-items: center;
     @include themed() {
-      color: buzTheme('textColor');
+      color: buzTheme('textPrimary');
     }
 
     .hero_about {
@@ -32,14 +35,14 @@
         font-weight: bold;
         justify-content: center;
         @include themed() {
-          color: buzTheme('textColor');
+          color: buzTheme('textPrimary');
         }
 
         .flip {
           margin-left: 0.5rem;
 
           @include themed() {
-            color: buzTheme('textColorSecondary');
+            color: buzTheme('accentMain');
           }
         }
 
@@ -56,7 +59,7 @@
         flex-wrap: wrap;
         justify-content: center;
         @include themed() {
-          color: buzTheme('textColorSecondary');
+          color: buzTheme('textSecondary');
         }
 
         span {
@@ -84,7 +87,7 @@
         align-items: center;
         @include themed() {
           box-shadow: buzTheme('shadow');
-          color: buzTheme('textColor');
+          color: buzTheme('textPrimary');
         }
 
         i {
@@ -136,7 +139,6 @@
           transform: rotate(-160deg) translateY(-6rem) rotate(-180deg);
         }
       }
-
 
       @media screen and (max-width: 768px) {
         width: 15rem;
@@ -215,22 +217,47 @@
     justify-content: center;
     align-items: center;
     width: 200px;
-    bottom: 4rem;
     left: 50%;
     margin-left: -100px;
     font-size: 1.2rem;
     text-align: center;
     gap: 0.5rem;
-    @include themed() {
-      color: buzTheme('textColorSecondary');
-    }
 
-    .icon-down {
-      font-size: 2em;
+    .scroll_down_icon {
+      width: 1.7rem;
+      height: 2.5rem;
+      border-radius: 43%;
       @include themed() {
-        box-shadow: buzTheme('shadow');
-        border-radius: 0.8rem;
+        border: 2px solid buzTheme('textSecondary');
+        background-color: buzTheme('backgroundColor');
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        translate: (-50%, -50%);
+        width: 0.3rem;
+        height: 0.3rem;
+        border-radius: 50%;
+        @include themed() {
+          background-color: buzTheme('accentMain');
+        }
+        top: 0.5rem;
+        animation: scroll_down 3s infinite;
       }
     }
+  }
+}
+
+@keyframes scroll_down {
+  0% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(1.7rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
   }
 }

@@ -1,28 +1,27 @@
 $themes: (
   light: (
     backgroundColor: #fff,
-    backgroundColorSecondary: #f5f5f5,
-    textColor: #222,
-    textColorSecondary: #5A0834,
-    buttonTextColor: #408bbd,
-    buttonTextHoverColor: #61b0e7,
-    buttonColor: #fff,
-    buttonBorder: 2px solid #fff,
-    shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
+    backgroundColorSecondary: #fdfdff,
+    primaryMain: #2196f3,
+    secondaryMain: #00bcd4,
+    accentMain: #651fff,
+    textPrimary: #000000de,
+    textSecondary: #000000be,
+    shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px,
+    border: 0.5px solid #ebecf2
   ),
   dark: (
-    backgroundColor: #222,
-    backgroundColorSecondary: #333,
-    textColor: #fff,
-    textColorSecondary: #beaf41,
-    buttonTextColor: #aaa,
-    buttonTextHoverColor: #ddd,
-    buttonColor: #333,
-    buttonBorder: 1px solid #aaa,
-    shadow: 0 5px 10px rgba(201, 201, 201, 0.2)
-  ),
+    backgroundColor: #202024,
+    backgroundColorSecondary: #3e3e45,
+    primaryMain: #2196f3,
+    secondaryMain: #00bcd4,
+    accentMain: #f5a623,
+    textPrimary: #ffffffde,
+    textSecondary: #dedede,
+    shadow: rgba(201, 201, 201, 0.1) 0px 4px 12px,
+    border: 0.5px solid #3b3b42
+  )
 );
-
 
 @mixin themed() {
   @each $theme, $map in $themes {
@@ -31,7 +30,12 @@ $themes: (
       $theme-map: () !global;
       @each $key, $submap in $map {
         $value: map-get(map-get($themes, $theme), '#{$key}');
-        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value
+          )
+        ) !global;
       }
       @content;
       $theme-map: null !global;

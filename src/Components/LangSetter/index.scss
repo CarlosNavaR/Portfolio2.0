@@ -3,8 +3,8 @@
 .react-select-container {
   width: 10rem;
   @include themed() {
-    color: buzTheme('textColorSecondary');
     box-shadow: buzTheme('shadow');
+    color: buzTheme('textPrimary');
   }
   border-radius: 8px;
 
@@ -20,6 +20,7 @@
     border: none;
     @include themed() {
       box-shadow: buzTheme('shadow');
+      background-color: buzTheme('backgroundColor');
     }
     border-radius: inherit;
     margin-bottom: 1rem;
@@ -38,8 +39,8 @@
 
 .react-select__option--is-selected {
   @include themed() {
-    background-color: buzTheme('backgroundColorSecondary');
-    color: buzTheme('textColor');
+    background-color: buzTheme('accentMain');
+    color: buzTheme('backgroundColor');
   }
 }
 
@@ -57,7 +58,4 @@
   justify-content: center;
   align-items: center;
   font-weight: 500;
-  @include themed() {
-    color: buzTheme('textColorSecondary');
-  }
 }

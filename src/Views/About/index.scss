@@ -1,7 +1,7 @@
 @import '../../Styles/Theme/theme';
 
 .About_container {
-  width: 100%;
+  width: 90%;
   border-radius: 1rem;
   flex-wrap: wrap;
   display: flex;
@@ -12,7 +12,7 @@
 
   @include themed() {
     background-color: buzTheme('backgroundColor');
-    color: buzTheme('textColor');
+    color: buzTheme('textPrimary');
   }
 
   .About_container__image {

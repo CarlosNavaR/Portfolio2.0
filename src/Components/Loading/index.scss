@@ -14,7 +14,7 @@
 
   @include themed() {
     background-color: buzTheme('backgroundColor');
-    color: buzTheme('textColor');
+    color: buzTheme('textPrimary');
   }
 
   .loading_container_title {

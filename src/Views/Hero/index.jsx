@@ -1,7 +1,6 @@
 import React, { useState, useLayoutEffect } from 'react';
 import Lottie from 'react-lottie';
 import { motion } from 'framer-motion';
-import { BiDownArrowAlt } from 'react-icons/bi';
 import useTranslate from '../../Hooks/useTranslate';
 import Astronaut from '../../Lotties/astronaut-hero.json';
 import './index.scss';
@@ -131,15 +130,13 @@ export default function index() {
 
           <h2 className='hero_about_subtitle'>
             <span className='hero_subtitle_name'>
-              {' '}
               {useTranslate('Jr Frontend Developer')}
             </span>
           </h2>
         </div>
       </div>
       <div className='scroll_down'>
-        <p>Scroll down</p>
-        <BiDownArrowAlt className='icon-down' />
+        <div className='scroll_down_icon' />
       </div>
     </div>
   );

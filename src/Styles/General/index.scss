@@ -11,6 +11,24 @@
   }
 }
 
+@-webkit-keyframes move-twink {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -10000px 0;
+  }
+}
+
+@keyframes move-twink {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -10000px 0;
+  }
+}
+
 html {
   overflow-y: scroll;
   height: 100%;
@@ -26,6 +44,7 @@ body {
   width: 300vw;
   height: 100vh;
   display: flex;
+  align-items: center;
   flex-wrap: nowrap;
 }
 
@@ -42,10 +61,8 @@ body {
 
 .panel {
   width: 100vw;
-  height: 100vh;
-  font-size: 30px;
+  height: 95vh;
   display: flex;
-  justify-content: center;
-  text-align: center;
   padding: 0.4rem;
+  justify-content: center;
 }

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Lottie from 'react-lottie';
 import { useInView } from 'react-intersection-observer';
 import astronautAbout from '../../Lotties/astronaut-about.json';
+import { client } from '../../Hooks/client';
+import useTranslate from '../../Hooks/useTranslate';
 import './index.scss';
 
 const defaultOptions = {
@@ -15,11 +17,20 @@ const defaultOptions = {
 };
 
 export default function index() {
+  const [about, setAbout] = useState(false);
+
   const [ref, inView] = useInView({
     threshold: 0.3,
     rootMargin: '-50px 0px -50px 0px',
     triggerOnce: false,
   });
+
+  useEffect(() => {
+    const query = `*[_type == "about"]`;
+    client.fetch(query).then(res => {
+      setAbout(res[0]);
+    });
+  }, []);
 
   return (
     <div className='About_container'>
@@ -39,12 +50,8 @@ export default function index() {
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 1, ease: 'easeIn' }}
       >
-        <p>About</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          voluptates, quod, quia, voluptatibus quae voluptatem quibusdam
-          voluptatum quos quas quidem nesciunt. Quisquam, quae. Quisquam
-        </p>
+        <p>{useTranslate(about?.title)}</p>
+        <p>{useTranslate(about?.description)}</p>
       </motion.div>
     </div>
   );
