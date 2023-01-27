@@ -50,8 +50,8 @@ export default function index() {
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 1, ease: 'easeIn' }}
       >
-        <p>{useTranslate(about?.title)}</p>
-        <p>{useTranslate(about?.description)}</p>
+        <h1>{useTranslate(about?.title)}</h1>
+        <>{useTranslate(about?.description)}</>
       </motion.div>
     </div>
   );

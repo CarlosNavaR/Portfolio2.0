@@ -6,11 +6,10 @@
     color: buzTheme('textSecondary');
   }
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   position: fixed;
-  bottom: 0;
-  margin-top: 1rem;
-  width: 100%;
+  bottom: 0.2rem;
   z-index: 9999;
+  width: 100%;
 }
