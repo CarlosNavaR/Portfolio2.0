@@ -1,14 +1,14 @@
 @import '../../Styles/Theme/theme';
 
 .box {
-  border-radius: 8px;
-  display: block;
-  position: relative;
   @include themed() {
     color: buzTheme('textSecondary');
     box-shadow: buzTheme('shadow');
+    border: buzTheme('border');
   }
   width: 12rem;
+  border-radius: 0.5rem;
+  margin-left: 0.5rem;
 
   .box_switch {
     padding: 0.3rem;

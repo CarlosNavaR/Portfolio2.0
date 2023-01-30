@@ -13,11 +13,6 @@ export default {
       name: 'color',
       title: 'Color',
       type: 'string',
-    },
-    {
-      name: 'linkSource',
-      title: 'Source',
-      type: 'string',
-    },
+    }
   ],
 };

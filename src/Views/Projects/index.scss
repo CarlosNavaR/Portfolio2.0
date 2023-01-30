@@ -1,7 +1,24 @@
+@import '../../Styles/Theme/theme';
+
 .projects_body {
   width: 90vw;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 1.5rem;
+  @include themed() {
+    color: buzTheme('accentMain');
+  }
+
+  .projects_body_title {
+    font-size: 1.9rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .projects_body_footer {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
 }
