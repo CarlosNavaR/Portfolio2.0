@@ -42,28 +42,30 @@ export default function index() {
       className='projects_body'
     >
       <div className='projects_body_title'>Last projects</div>
-      {projects?.map(project => {
-        const {
-          _id: id,
-          title,
-          description,
-          tags,
-          imgUrl: image,
-          sourceCode: github,
-          projectLink: url,
-        } = project;
-        return (
-          <Project
-            key={id}
-            title={title}
-            description={description}
-            tags={tags}
-            image={image}
-            github={github}
-            url={url}
-          />
-        );
-      })}
+      <div className='projects_body_container'>
+        {projects?.map(project => {
+          const {
+            _id: id,
+            title,
+            description,
+            tags,
+            imgUrl: image,
+            sourceCode: github,
+            projectLink: url,
+          } = project;
+          return (
+            <Project
+              key={id}
+              title={title}
+              description={description}
+              tags={tags}
+              image={image}
+              github={github}
+              url={url}
+            />
+          );
+        })}
+      </div>
       <div className='projects_body_footer'>see all</div>
     </motion.div>
   );

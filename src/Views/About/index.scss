@@ -41,7 +41,8 @@
   }
 
   @media screen and (max-width: 768px) {
-    flex-direction: column;
+    flex-direction: row;
+    height: 100vh;
     gap: 0;
     font-size: 1rem;
 
