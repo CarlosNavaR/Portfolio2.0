@@ -25,55 +25,63 @@ const defaultOptions = {
   },
 };
 
-const languagesClass = [
-  {
-    name: 'Git',
-    icon: 'devicon-git-plain',
-    color: '#f05032',
-  },
-  {
-    name: 'HTML5',
-    icon: 'devicon-html5-plain',
-    color: '#e34c26',
-  },
-  {
-    name: 'CSS3',
-    icon: 'devicon-css3-plain',
-    color: '#2965f1',
-  },
-  {
-    name: 'Sass',
-    icon: 'devicon-sass-original',
-    color: '#cc6699',
-  },
-  {
-    name: 'React',
-    icon: 'devicon-react-plain',
-    color: '#61dafb',
-  },
-  {
-    name: 'Javascript',
-    icon: 'devicon-javascript-plain',
-    color: '#f7df1e',
-  },
-  {
-    name: 'typescript',
-    icon: 'devicon-typescript-plain',
-    color: '#007acc',
-  },
-  {
-    name: 'NodeJS',
-    icon: 'devicon-nodejs-plain',
-    color: '#339933',
-  },
-];
-
 const items = [
   {
     id: 0,
     content: 'Buz 🚀',
   },
   { id: 1, content: 'Carlos' },
+];
+
+const languagesClass = [
+  {
+    id: 0,
+    name: 'Git',
+    icon: 'devicon-git-plain',
+    color: '#f05032',
+  },
+  {
+    id: 1,
+    name: 'HTML5',
+    icon: 'devicon-html5-plain',
+    color: '#e34c26',
+  },
+  {
+    id: 2,
+    name: 'CSS3',
+    icon: 'devicon-css3-plain',
+    color: '#2965f1',
+  },
+  {
+    id: 3,
+    name: 'Sass',
+    icon: 'devicon-sass-original',
+    color: '#cc6699',
+  },
+  {
+    id: 4,
+    name: 'React',
+    icon: 'devicon-react-plain',
+    color: '#61dafb',
+  },
+  {
+    id: 5,
+    name: 'Javascript',
+    icon: 'devicon-javascript-plain',
+    color: '#f7df1e',
+  },
+  {
+    id: 6,
+    name: 'typescript',
+    icon: 'devicon-typescript-plain',
+    color: '#007acc',
+  },
+  {
+    id: 7,
+    name: 'NodeJS',
+    icon: 'devicon-nodejs-plain',
+    color: '#339933',
+  },
 ];
 
 export default function index() {
@@ -102,6 +110,7 @@ export default function index() {
             <div
               className={`icon_circle ${item.className}`}
               style={{ backgroundColor: item.color }}
+              key={item.id}
             >
               <i className={item.icon} />
             </div>
