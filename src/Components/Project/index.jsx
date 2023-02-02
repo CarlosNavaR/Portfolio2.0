@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 import { BsGithub } from 'react-icons/bs';
 import { TfiWorld } from 'react-icons/tfi';
 import { urlFor } from '../../Hooks/client';
+import { fadeIn } from '../../Helper/motion';
 import './index.scss';
 
 export default function index({
-  key,
   title,
   description,
   tags = [],
@@ -16,12 +17,30 @@ export default function index({
 }) {
   return (
     <>
-      <hr className='header_line' />
-      <div className='project_card' key={key}>
-        <div className='project_card__image'>
+      <motion.hr
+        variants={fadeIn('down', 'tween', 0.1, 1, 0.1)}
+        initial='hidden'
+        whileInView='show'
+        viewport={{ once: false, amount: 0.25 }}
+        className='header_line'
+      />
+      <div className='project_card'>
+        <motion.div
+          variants={fadeIn('right', 'tween', 0.1, 1)}
+          initial='hidden'
+          whileInView='show'
+          viewport={{ once: false, amount: 0.25 }}
+          className='project_card__image'
+        >
           <img src={urlFor(image)} alt='project' />
-        </div>
-        <div className='project_card_container'>
+        </motion.div>
+        <motion.div
+          variants={fadeIn('left', 'tween', 0.1, 1)}
+          initial='hidden'
+          whileInView='show'
+          viewport={{ once: false, amount: 0.25 }}
+          className='project_card_container'
+        >
           <h1>{title}</h1>
           {tags?.length && (
             <div className='tags_containers'>
@@ -52,14 +71,13 @@ export default function index({
               </a>
             )}
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );
 }
 
 index.propTypes = {
-  key: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(
@@ -67,7 +85,7 @@ index.propTypes = {
       title: PropTypes.string.isRequired,
       color: PropTypes.string.isRequired,
     })
-  ).isRequired,
+  ),
   image: PropTypes.shape({
     _type: PropTypes.string.isRequired,
     asset: PropTypes.shape({

@@ -2,8 +2,8 @@
 
 .hero {
   flex: 1;
-  width: 100vw;
   overflow: hidden;
+  width: 100%;
   flex-direction: row;
   background-image: url('https://assets.codepen.io/1538474/star.svg') !important;
   -webkit-animation: move-twink 800s linear infinite;

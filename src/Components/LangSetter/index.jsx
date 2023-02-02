@@ -23,6 +23,7 @@ export default function index() {
 
   const options = [
     {
+      id: 'en-1',
       value: 'en',
       label: (
         <div className='select_item'>
@@ -32,6 +33,7 @@ export default function index() {
       ),
     },
     {
+      id: 'es-1',
       value: 'es',
       label: (
         <div className='select_item'>
@@ -45,6 +47,7 @@ export default function index() {
   return (
     <div className='custom_select'>
       <Select
+        key={lang}
         menuPlacement='top'
         unstyled
         className='react-select-container'
