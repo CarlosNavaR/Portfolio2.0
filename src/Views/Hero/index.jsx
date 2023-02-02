@@ -3,6 +3,7 @@ import Lottie from 'react-lottie';
 import { motion } from 'framer-motion';
 import useTranslate from '../../Hooks/useTranslate';
 import Astronaut from '../../Lotties/astronaut-hero.json';
+import { fadeIn } from '../../Helper/motion';
 import './index.scss';
 
 const scaleVariants = {
@@ -99,7 +100,13 @@ export default function index() {
   }, []);
 
   return (
-    <div className='hero'>
+    <motion.div
+      variants={fadeIn('up', 'tween', 0.2, 1)}
+      initial='hidden'
+      whileInView='show'
+      viewport={{ once: true, amount: 0.25 }}
+      className='hero'
+    >
       <div className='Content'>
         <motion.div
           variants={scaleVariants}
@@ -147,6 +154,6 @@ export default function index() {
       <div className='scroll_down'>
         <div className='scroll_down_icon' />
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -1,21 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Project } from '../../Components';
 import { client } from '../../Hooks/client';
+import { fadeIn } from '../../Helper/motion';
 import './index.scss';
 
-const scaleVariants = {
-  whileInView: {
-    scale: [0, 1],
-    opacity: [0, 1],
-    transition: {
-      duration: 0.5,
-      ease: 'easeIn',
-    },
-  },
-};
 export default function index() {
   const [projects, setProjects] = useState([]);
+  const [height, setHeight] = useState({});
+  const projectsRef = useRef();
 
   useEffect(() => {
     const query = `*[_type == "project"] | order(_createdAt desc) [0...2]{
@@ -35,13 +28,28 @@ export default function index() {
     });
   }, []);
 
+  const getContainerSize = () => {
+    const newHeight = projectsRef.current.clientHeight;
+    setHeight({
+      height: `${newHeight}px`,
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', getContainerSize);
+  }, []);
+
   return (
-    <motion.div
-      variants={scaleVariants}
-      whileInView={scaleVariants.whileInView}
-      className='projects_body'
-    >
-      <div className='projects_body_title'>Last projects</div>
+    <div className='projects_body' style={height} ref={projectsRef}>
+      <motion.div
+        variants={fadeIn('down', 'tween', 0.2, 1)}
+        initial='hidden'
+        whileInView='show'
+        viewport={{ once: false, amount: 0.25 }}
+        className='projects_body_title'
+      >
+        Last projects
+      </motion.div>
       <div className='projects_body_container'>
         {projects?.map(project => {
           const {
@@ -67,6 +75,6 @@ export default function index() {
         })}
       </div>
       <div className='projects_body_footer'>see all</div>
-    </motion.div>
+    </div>
   );
 }

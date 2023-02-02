@@ -2,7 +2,6 @@
 
 .projects_body {
   width: 90vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -14,11 +13,6 @@
     font-size: 1.9rem;
     font-weight: 600;
     text-align: center;
-  }
-
-  .projects_body_container {
-    overflow: auto;
-    overflow-x: hidden;
   }
 
   .projects_body_footer {
