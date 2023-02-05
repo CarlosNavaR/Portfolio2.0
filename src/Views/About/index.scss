@@ -46,7 +46,8 @@
     gap: 0;
     font-size: 1rem;
     flex-direction: column;
-    height: 100vh;
+    height: auto;
+    margin: 1rem 0;
 
     .About_container__image {
       flex: 0.6;

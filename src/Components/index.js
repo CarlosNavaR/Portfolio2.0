@@ -1,3 +1,4 @@
+export { default as ContactForm } from './Contact';
 export { default as Footer } from './Footer';
 export { default as LangSetter } from './LangSetter';
 export { default as Loading } from './Loading';
