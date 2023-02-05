@@ -1,0 +1,13 @@
+.contact_container {
+  width: 90vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .lottie_container {
+    display: none;
+  }
+}

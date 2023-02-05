@@ -1,0 +1,131 @@
+@import '../../Styles/Theme/theme';
+
+.main_container_contact {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .contact_title {
+    font-weight: 600;
+    @include themed() {
+      color: buzTheme('textSecondary');
+    }
+  }
+
+  .social_container {
+    align-self: flex-end;
+    padding: 0.5rem;
+    display: flex;
+
+    .linkedin {
+      border: 1px solid #0e76a8;
+
+      &:hover {
+        background: #0e76a8;
+        color: #fff;
+      }
+    }
+
+    .github {
+      border: 1px solid #333;
+
+      &:hover {
+        background: #333;
+        color: #fff;
+      }
+    }
+
+    a {
+      margin-right: 0.5rem;
+      text-decoration: none;
+      padding: 0.5rem;
+      border-radius: 50%;
+      width: 1.5rem;
+      height: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include themed() {
+        color: buzTheme('textSecondary');
+      }
+    }
+  }
+
+  .contact_form {
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+
+    .contact_form_inputs {
+      display: flex;
+      flex-direction: column;
+      @include themed() {
+        box-shadow: buzTheme('shadow');
+      }
+
+      textarea {
+        height: 10rem;
+        resize: none;
+        background: transparent;
+        outline: none;
+        @include themed() {
+          color: buzTheme('textPrimary');
+        }
+        font-size: 0.875em;
+        border: solid 1px #b3aca7;
+        padding: 15px;
+        border-radius: 0 0 0.5rem 0.5rem;
+      }
+
+      input {
+        height: 2rem;
+        background: transparent;
+        @include themed() {
+          color: buzTheme('textPrimary');
+        }
+        outline: none;
+        font-size: 0.875em;
+        border: solid 1px #b3aca7;
+        padding: 15px;
+
+        &:first-child {
+          border-radius: 0.5rem 0.5rem 0 0;
+        }
+      }
+    }
+
+    button {
+      margin-top: 0.5rem;
+      height: 2.5rem;
+      background: transparent;
+      @include themed() {
+        color: buzTheme('textPrimary');
+      }
+      outline: none;
+      font-size: 0.875em;
+      border: solid 1px #b3aca7;
+      border-radius: 0.5rem;
+
+      &:hover {
+        cursor: pointer;
+        @include themed() {
+          background: buzTheme('secondaryMain');
+        }
+        color: #fff;
+      }
+    }
+
+    .honeypot {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0;
+      width: 0;
+      z-index: -1;
+    }
+  }
+}
