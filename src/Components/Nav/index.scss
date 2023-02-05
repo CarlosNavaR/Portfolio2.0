@@ -28,6 +28,12 @@ nav {
         background-color: transparent;
         transition: all 0.3s linear;
         cursor: pointer;
+
+        svg {
+          @include themed() {
+            color: buzTheme('textPrimary');
+          }
+        }
       }
     }
 
