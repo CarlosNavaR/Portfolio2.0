@@ -57,31 +57,31 @@ export default function index() {
         <h1 className='contact_title'>Send me a rock</h1>
         {!loading && (
           <form id='form' className='contact_form' onSubmit={onSubmit}>
-            <input
-              className='honeypot'
-              type='text'
-              placeholder='Name'
-              id='name'
-              name='name'
-              tabIndex={-1}
-            />
-            <input
-              className='honeypot'
-              type='email'
-              placeholder='Email'
-              id='email'
-              name='email'
-              tabIndex={-1}
-            />
-            <textarea
-              placeholder='Message'
-              className='honeypot'
-              type='text'
-              id='message'
-              name='message'
-              tabIndex={-1}
-            />
             <div className='contact_form_inputs'>
+              <input
+                className='honeypot'
+                type='text'
+                placeholder='Name'
+                id='name'
+                name='name'
+                tabIndex={-1}
+              />
+              <input
+                className='honeypot'
+                type='email'
+                placeholder='Email'
+                id='email'
+                name='email'
+                tabIndex={-1}
+              />
+              <textarea
+                placeholder='Message'
+                className='honeypot'
+                type='text'
+                id='message'
+                name='message'
+                tabIndex={-1}
+              />
               <input
                 type='text'
                 placeholder='Name'
