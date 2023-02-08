@@ -1,20 +1,20 @@
 @import '../../Styles/Theme/theme';
 
 .hero {
-  flex: 1;
-  overflow: hidden;
-  width: 100%;
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 90vh;
   background-image: url('https://assets.codepen.io/1538474/star.svg') !important;
   -webkit-animation: move-twink 800s linear infinite;
   animation: move-twink 800s linear infinite;
 
   .Content {
     width: 100vw;
-    height: 85vh;
+    flex: 0.5;
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     @include themed() {
       color: buzTheme('textPrimary');
@@ -47,7 +47,7 @@
         }
 
         @media screen and (max-width: 768px) {
-          font-size: 3rem;
+          font-size: 2.5rem;
         }
       }
 
@@ -208,6 +208,10 @@
         transform: translate(0, -15%);
       }
     }
+
+    @media screen and (max-width: 768px) {
+      flex: 0.7;
+    }
   }
 
   .scroll_down {
@@ -222,7 +226,7 @@
     font-size: 1.2rem;
     text-align: center;
     gap: 0.5rem;
-    bottom: 4rem;
+    bottom: 0;
 
     .scroll_down_icon {
       width: 1.7rem;
