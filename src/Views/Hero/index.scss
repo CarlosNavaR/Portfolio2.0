@@ -1,16 +1,18 @@
 @import '../../Styles/Theme/theme';
 
 .hero {
+  height: 90vh;
   display: flex;
+  width: 99vw;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 90vh;
+  align-items: center;
   background-image: url('https://assets.codepen.io/1538474/star.svg') !important;
   -webkit-animation: move-twink 800s linear infinite;
   animation: move-twink 800s linear infinite;
 
   .Content {
-    width: 100vw;
+    width: 90vw;
     flex: 0.5;
     display: flex;
     justify-content: center;
@@ -21,7 +23,6 @@
     }
 
     .hero_about {
-      width: 100vw;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -216,17 +217,14 @@
 
   .scroll_down {
     position: relative;
+    width: 90vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    left: 50%;
-    margin-left: -100px;
     font-size: 1.2rem;
     text-align: center;
-    gap: 0.5rem;
-    bottom: 0;
+    padding: 0.5rem 0;
 
     .scroll_down_icon {
       width: 1.7rem;
@@ -256,13 +254,31 @@
 
 @keyframes scroll_down {
   0% {
-    transform: translate(-50%, -50%) translateY(0);
+    transform: translate(-50%, -50%) translateY(0.3rem);
   }
   50% {
-    transform: translate(-50%, -50%) translateY(1.7rem);
+    transform: translate(-50%, -50%) translateY(2rem);
     opacity: 0;
   }
   100% {
-    transform: translate(-50%, -50%) translateY(0);
+    transform: translate(-50%, -50%) translateY(0.3rem);
+  }
+}
+
+@-webkit-keyframes move-twink {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -10000px 0;
+  }
+}
+
+@keyframes move-twink {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -10000px 0;
   }
 }

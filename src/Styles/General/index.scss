@@ -14,28 +14,3 @@
   align-items: center;
   scroll-behavior: smooth;
 }
-
-@-webkit-keyframes move-twink {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: -10000px 0;
-  }
-}
-
-@keyframes move-twink {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: -10000px 0;
-  }
-}
-
-.panel {
-  width: 100vw;
-  display: flex;
-  padding: 0.4rem;
-  justify-content: center;
-}
