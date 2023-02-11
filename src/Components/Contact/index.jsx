@@ -46,7 +46,7 @@ export default function index() {
     const { status } = await sendEmail(data);
 
     if (status === 200) {
-      // Do something / Control loading
+      // Do something / Control loading / send message that email was sent
       setLoading(false);
     }
   };
