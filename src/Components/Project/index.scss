@@ -1,7 +1,7 @@
 @import '../../Styles/Theme/theme';
 
 .header_line {
-  width: 90vw;
+  width: 80vw;
   @include themed() {
     color: buzTheme('textPrimary');
     background-color: buzTheme('textPrimary');
@@ -36,7 +36,7 @@
 
   .project_card_container {
     flex: 1;
-    width: 90vw;
+    width: 80vw;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;

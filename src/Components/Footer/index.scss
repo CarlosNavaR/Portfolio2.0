@@ -1,15 +1,45 @@
 @import '../../Styles/Theme/theme';
 
-.footer {
+.footer_float_container {
   @include themed() {
-    background-color: buzTheme('backgroundColor');
-    color: buzTheme('textSecondary');
+    color: buzTheme('backgroundColor');
   }
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  width: 100vw;
   position: fixed;
-  bottom: 0.2rem;
-  z-index: 9999;
-  width: 100%;
+  bottom: 0;
+
+  .button_float {
+    @include themed() {
+      background-color: buzTheme('accentMain');
+    }
+
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 43px;
+    height: 43px;
+    border-radius: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 20px;
+  }
+
+  .footer_content {
+    position: fixed;
+    right: 1rem;
+    bottom: 4rem;
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+    @include themed() {
+      border: buzTheme('border');
+      box-shadow: buzTheme('shadow');
+      background-color: buzTheme('backgroundColor');
+    }
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }

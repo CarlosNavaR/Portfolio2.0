@@ -1,9 +1,13 @@
 .contact_container {
-  width: 90vw;
+  width: 80vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .lottie_container {
+    flex: 1;
+  }
 }
 
 @media screen and (max-width: 768px) {

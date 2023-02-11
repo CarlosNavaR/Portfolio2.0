@@ -1,8 +1,10 @@
 @import '../../Styles/Theme/theme';
 
 nav {
-  position: relative;
+  position: sticky;
+  top: 0;
   width: 100%;
+  z-index: 1;
 
   @include themed() {
     color: buzTheme('textPrimary');
