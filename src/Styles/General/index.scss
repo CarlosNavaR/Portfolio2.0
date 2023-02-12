@@ -13,4 +13,30 @@
   flex-direction: column;
   align-items: center;
   scroll-behavior: smooth;
+
+  .start_container {
+    background-image: url('https://assets.codepen.io/1538474/star.svg');
+    -webkit-animation: move-twink 800s linear infinite;
+    animation: move-twink 800s linear infinite;
+    width: 95vw;
+  }
+
+  .App_container {
+    max-width: 80rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: inherit;
+    padding: 0 0.5rem;
+  }
+}
+
+.progress_bar {
+  position: fixed;
+  background-color: red;
+  width: 100vw;
+  height: 10px;
+  bottom: 0;
+  z-index: 1;
 }

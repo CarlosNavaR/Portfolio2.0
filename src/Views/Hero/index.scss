@@ -3,16 +3,11 @@
 .hero {
   height: 90vh;
   display: flex;
-  width: 99vw;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-image: url('https://assets.codepen.io/1538474/star.svg') !important;
-  -webkit-animation: move-twink 800s linear infinite;
-  animation: move-twink 800s linear infinite;
 
   .Content {
-    width: 80vw;
     flex: 0.5;
     display: flex;
     justify-content: center;
