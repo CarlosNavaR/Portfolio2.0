@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import useTranslate from '../../Hooks/useTranslate';
 import logo from '../../Images/logo.png';
@@ -7,7 +8,7 @@ import './index.scss';
 export const links = [
   {
     id: '2',
-    url: '/about',
+    url: '#about',
     text: 'About',
   },
   {
@@ -17,7 +18,7 @@ export const links = [
   },
   {
     id: '4',
-    url: '/contact',
+    url: '#contact',
     text: 'Contact',
   },
 ];
@@ -53,9 +54,14 @@ export default function index() {
           <ul className='links' ref={linksRef}>
             {links.map(link => {
               const { id, url, text } = link;
+              // TODO: Refactor this code, its messy, but it works
               return (
                 <li key={id}>
-                  <a href={`#${url}`}>{useTranslate(text)}</a>
+                  {url.includes('#') ? (
+                    <a href={`${url}`}>{useTranslate(text)}</a>
+                  ) : (
+                    <Link to={`${url}`}>{useTranslate(text)}</Link>
+                  )}
                 </li>
               );
             })}
