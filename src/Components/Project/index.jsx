@@ -18,7 +18,7 @@ export default function index({
   return (
     <>
       <motion.hr
-        variants={fadeIn('down', 'tween', 0.1, 1, 0.1)}
+        variants={fadeIn('right', 'tween', 0.1, 1, 0.1)}
         initial='hidden'
         whileInView='show'
         viewport={{ once: false, amount: 0.25 }}

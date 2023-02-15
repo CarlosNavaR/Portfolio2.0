@@ -27,7 +27,7 @@ export default function index() {
   }, []);
 
   return (
-    <div className='About_container'>
+    <div className='About_container' id='about'>
       <motion.div
         className='About_container__image'
         variants={fadeIn('right', 'tween', 0.2, 1)}

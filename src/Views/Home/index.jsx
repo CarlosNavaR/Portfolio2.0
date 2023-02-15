@@ -48,7 +48,11 @@ export default function index() {
         style={{ height: `${scrollY}%` }}
         initial={{ height: '0%' }}
         animate={{ height: `${scrollY}%` }}
-        transition={{ duration: 0.8 }}
+        transition={{
+          duration: 0.8,
+          ease: 'easeIn',
+          type: 'tween',
+        }}
       >
         <Lottie
           options={defaultOptions}

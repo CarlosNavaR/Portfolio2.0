@@ -15,7 +15,7 @@ const defaultOptions = {
 
 export default function index() {
   return (
-    <div className='contact_container'>
+    <div className='contact_container' id='contact'>
       <div className='lottie_container'>
         <Lottie
           options={defaultOptions}
