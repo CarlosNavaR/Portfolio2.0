@@ -4,6 +4,7 @@ import ThemeProvider from './Contexts/ThemeContext';
 import LangProvider from './Contexts/LangContext';
 import { Loading, NotFound } from './Components';
 import './Styles/General/index.scss';
+import { RProjects } from './Views';
 
 const Home = lazy(() => import('./Views/Home'));
 
@@ -14,11 +15,12 @@ function App() {
         <ThemeProvider>
           <BrowserRouter>
             <Routes>
-              {
-                // TODO: Verify witch option is better, set one route for each section or just set one for projects
-              }
               <Route path='/' element={<Home />} />
-              <Route path='/projects' element={<h1>All projects</h1>} />
+              <Route
+                path='/projects'
+                element={<RProjects />}
+                loader={<Loading />}
+              />
               <Route path='*' element={<NotFound />} />
             </Routes>
           </BrowserRouter>

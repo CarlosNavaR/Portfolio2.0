@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { Link, useLocation } from 'react-router-dom';
 import useTranslate from '../../Hooks/useTranslate';
 import logo from '../../Images/logo.png';
 import './index.scss';
@@ -13,7 +13,7 @@ export const links = [
   },
   {
     id: '3',
-    url: '/projects',
+    url: '#projects',
     text: 'Projects',
   },
   {
@@ -27,13 +27,17 @@ export default function index() {
   const [showLinks, setShowLinks] = useState(false);
   const linksContainerRef = useRef(null);
   const linksRef = useRef(null);
+  const location = useLocation();
+  const isProjectMenu = location.pathname === '/projects';
 
   useEffect(() => {
-    const linksHeight = linksRef.current.getBoundingClientRect().height;
-    if (showLinks) {
-      linksContainerRef.current.style.height = `${linksHeight}px`;
-    } else {
-      linksContainerRef.current.style.height = '0px';
+    if (linksRef.current) {
+      const linksHeight = linksRef.current.getBoundingClientRect().height;
+      if (showLinks && linksContainerRef) {
+        linksContainerRef.current.style.height = `${linksHeight}px`;
+      } else {
+        linksContainerRef.current.style.height = '0px';
+      }
     }
   }, [showLinks]);
 
@@ -41,7 +45,9 @@ export default function index() {
     <nav>
       <div className='nav-center'>
         <div className='nav-header'>
-          <img src={logo} className='logo' alt='logo' />
+          <Link to='/'>
+            <img src={logo} className='logo' alt='logo' />
+          </Link>
           <button
             className='nav-toggle'
             onClick={() => setShowLinks(!showLinks)}
@@ -52,19 +58,17 @@ export default function index() {
         </div>
         <div className='links-container' ref={linksContainerRef}>
           <ul className='links' ref={linksRef}>
-            {links.map(link => {
-              const { id, url, text } = link;
-              // TODO: Refactor this code, its messy, but it works
-              return (
-                <li key={id}>
-                  {url.includes('#') ? (
+            {!isProjectMenu &&
+              links &&
+              links.map(link => {
+                const { id, url, text } = link;
+                return (
+                  <li key={id}>
                     <a href={`${url}`}>{useTranslate(text)}</a>
-                  ) : (
-                    <Link to={`${url}`}>{useTranslate(text)}</Link>
-                  )}
-                </li>
-              );
-            })}
+                  </li>
+                );
+              })}
+            {isProjectMenu && <Link to='/'>Home</Link>}
           </ul>
         </div>
       </div>
