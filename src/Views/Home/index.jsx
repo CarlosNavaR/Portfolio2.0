@@ -3,8 +3,8 @@ import { motion, useScroll } from 'framer-motion';
 import Lottie from 'react-lottie';
 import Rocket from '../../Lotties/rocket_particles.json';
 import { Nav, Footer } from '../../Components';
-import About from '../About';
 import Hero from '../Hero';
+import About from '../About';
 import Projects from '../Projects';
 import Contact from '../Contact';
 

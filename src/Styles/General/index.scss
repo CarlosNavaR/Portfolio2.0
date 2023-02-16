@@ -5,6 +5,10 @@
   font-family: 'Open Sans', sans-serif !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .App {
   @include themed() {
     background-color: buzTheme('backgroundColor');

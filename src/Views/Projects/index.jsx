@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Project } from '../../Components';
 import { client } from '../../Hooks/client';
 import { fadeIn } from '../../Helper/motion';
@@ -7,7 +8,7 @@ import './index.scss';
 
 export default function index() {
   const [projects, setProjects] = useState([]);
-  const [height, setHeight] = useState({});
+  const [height, setHeight] = useState(null);
   const projectsRef = useRef();
 
   useEffect(() => {
@@ -29,10 +30,8 @@ export default function index() {
   }, []);
 
   const getContainerSize = () => {
-    const newHeight = projectsRef.current.clientHeight;
-    setHeight({
-      height: `${newHeight}px`,
-    });
+    const newHeight = projectsRef?.current?.clientHeight;
+    setHeight(newHeight);
   };
 
   useEffect(() => {
@@ -40,7 +39,14 @@ export default function index() {
   }, []);
 
   return (
-    <div className='projects_body' style={height} ref={projectsRef}>
+    <div
+      className='projects_body'
+      style={{
+        height: `${height}px`,
+      }}
+      ref={projectsRef}
+      id='projects'
+    >
       <motion.div
         variants={fadeIn('down', 'tween', 0.2, 1)}
         initial='hidden'
@@ -74,7 +80,9 @@ export default function index() {
           );
         })}
       </div>
-      <div className='projects_body_footer'>see all</div>
+      <div className='projects_body_footer'>
+        <Link to='projects'>see all</Link>
+      </div>
     </div>
   );
 }
