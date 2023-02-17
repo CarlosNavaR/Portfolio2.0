@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { Link, useLocation } from 'react-router-dom';
-import useTranslate from '../../Hooks/useTranslate';
 import logo from '../../Images/logo.png';
 import './index.scss';
+import { useTranslation } from 'react-i18next';
 
 export const links = [
   {
@@ -29,6 +29,7 @@ export default function index() {
   const linksRef = useRef(null);
   const location = useLocation();
   const isProjectMenu = location.pathname === '/projects';
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (linksRef.current) {
@@ -60,11 +61,11 @@ export default function index() {
           <ul className='links' ref={linksRef}>
             {!isProjectMenu &&
               links &&
-              links.map(link => {
+              links?.map(link => {
                 const { id, url, text } = link;
                 return (
                   <li key={id}>
-                    <a href={`${url}`}>{useTranslate(text)}</a>
+                    <a href={`${url}`}>{t(text)}</a>
                   </li>
                 );
               })}

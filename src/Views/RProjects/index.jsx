@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Footer, Nav, Project } from '../../Components';
+import { Project } from '../../Components';
 import { client } from '../../Hooks/client';
 import { fadeIn } from '../../Helper/motion';
 import './index.scss';
@@ -10,6 +9,8 @@ export default function index() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
+    if (projects.length > 0) return;
+
     const query = `*[_type == "project"] | order(_createdAt desc) {
       _id,
       title,
@@ -22,6 +23,7 @@ export default function index() {
         color,
       }
     }`;
+
     client.fetch(query).then(res => {
       setProjects(res);
     });
@@ -29,8 +31,7 @@ export default function index() {
 
   return (
     <div className='RProjects'>
-      <Nav />
-      <div className='projects_all_body'>
+      <div className='App_container projects_all_body'>
         <motion.div
           variants={fadeIn('down', 'tween', 0.2, 1)}
           initial='hidden'
@@ -64,11 +65,7 @@ export default function index() {
             );
           })}
         </div>
-        <div className='projects_body_footer'>
-          <Link to='projects'>see all</Link>
-        </div>
       </div>
-      <Footer />
     </div>
   );
 }
