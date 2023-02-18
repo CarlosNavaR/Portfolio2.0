@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Project } from '../../Components';
 import { client } from '../../Hooks/client';
+import useTranslate from '../../Hooks/useTranslate';
 import { fadeIn } from '../../Helper/motion';
 import './index.scss';
 
@@ -54,7 +55,7 @@ export default function index() {
         viewport={{ once: false, amount: 0.25 }}
         className='projects_body_title'
       >
-        Last projects
+        {useTranslate('Last projects')}
       </motion.div>
       <div className='projects_body_container'>
         {projects?.map(project => {
