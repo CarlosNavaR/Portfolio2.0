@@ -13,7 +13,7 @@
     }
   },
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "@typescript-eslint/dot-notation": "error",
     "prettier/prettier": "error",
