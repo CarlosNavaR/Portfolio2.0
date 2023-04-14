@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { LinkType } from '@/types/nav';
 import logo from '@/images/logo.png';
-import ThemeSetter from '@/components/themeSetter';
 import LanguageSetter from '@/components/langSetter';
+import ThemeSetter from '@/components/themeSetter';
 import useTranslate from '@/hooks/useTranslate';
 import styles from './index.module.scss';
 
