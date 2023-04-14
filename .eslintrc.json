@@ -4,7 +4,7 @@
     "commonjs": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "standard-with-typescript"],
+  "extends": ["plugin:react/recommended", "prettier"],
   "overrides": [],
   "parserOptions": {
     "project": "./tsconfig.json",
@@ -16,7 +16,6 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "@typescript-eslint/dot-notation": "error",
-    "prettier/prettier": "error",
     "space-before-function-paren": "off",
     "react/prop-types": "off",
     "no-use-before-define": "off",
