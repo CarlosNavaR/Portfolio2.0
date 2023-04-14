@@ -7,10 +7,15 @@
   "extends": ["plugin:react/recommended", "standard-with-typescript"],
   "overrides": [],
   "parserOptions": {
-    "ecmaVersion": "latest"
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
-  "plugins": ["react"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
   "rules": {
+    "@typescript-eslint/dot-notation": "error",
     "prettier/prettier": "error",
     "space-before-function-paren": "off",
     "react/prop-types": "off",
