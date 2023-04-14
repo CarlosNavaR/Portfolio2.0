@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import Hero from '@/pages/Hero';
-import Nav from '@/components/Navbar';
+import Hero from '@/pages/hero';
+import Nav from '@/components/navbar';
 
 export default function Home() {
   return (

@@ -11,7 +11,7 @@ import {
 } from '@/constants/framer';
 import Astronaut from '@/lotties/astronaut-hero.json';
 import useTranslate from '@/hooks/useTranslate';
-import SocialContainer from '@/components/Social';
+import SocialContainer from '@/components/social';
 
 const items: HeroTextType[] = [
   {
