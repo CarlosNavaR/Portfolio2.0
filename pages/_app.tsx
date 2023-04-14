@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import React, { Suspense } from 'react';
 import LanguageProvider from '@/context/LanguageContext';
 import ThemeProvider from '@/context/ThemeContext';
 import '@/styles/normalize.css';
