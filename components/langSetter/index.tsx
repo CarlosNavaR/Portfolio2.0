@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import Image from 'next/image';
 import { LanguageContext } from '@/context/LanguageContext';
-import UsFlag from '@/Images/estados-unidos.png';
-import MxFlag from '@/Images/mexico.png';
+import UsFlag from '@/images/estados-unidos.png';
+import MxFlag from '@/images/mexico.png';
 import styles from './index.module.scss';
 
 const langOptions = [
