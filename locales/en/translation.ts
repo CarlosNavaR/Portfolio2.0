@@ -1,5 +1,6 @@
 export default {
   About: 'About',
+  'About me': 'About me',
   Projects: 'Projects',
   Contact: 'Contact',
   mainText: "Hello! I'm ",
