@@ -1,4 +1,6 @@
 import { sanityClient } from '@/helpers/client';
+import { ContactFormType } from '@/types/api';
+import emailjs from '@emailjs/browser';
 
 export const getAboutMe = async () => {
   const query = `*[_type == "about"]`;

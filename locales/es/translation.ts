@@ -7,4 +7,9 @@ export default {
   'Jr Frontend Developer': 'Desarrollador Frontend Jr',
   loading: 'Un momento, estamos cargando la página para ti...',
   'Last projects': 'últimos proyectos',
+  'Send me a rock': 'Hola, envíame una roca',
+  Name: 'Nombre',
+  Email: 'Correo',
+  Message: 'Mensaje',
+  'Go 🚀': 'Enviar 🚀',
 };

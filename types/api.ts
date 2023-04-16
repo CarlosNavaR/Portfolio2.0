@@ -39,3 +39,9 @@ export type AboutType = {
   description: string;
   title: string;
 };
+
+export type ContactFormType = {
+  buzName: string;
+  buzEmail: string;
+  buzMessage: string;
+};
