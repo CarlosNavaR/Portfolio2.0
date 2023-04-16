@@ -2,13 +2,17 @@ import React from 'react';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import Loading from '@/components/loading';
+import { getAboutMe, getProjects } from '@/api';
+import { PropsHomeType } from '@/types/api';
 
 const Home = dynamic(() => import('@/pages/home'), {
   ssr: false,
   loading: () => <Loading />,
 });
 
-export default function index() {
+export default function index(props: PropsHomeType) {
+  const { query } = props;
+
   return (
     <>
       <Head>
@@ -35,8 +39,22 @@ export default function index() {
       </Head>
 
       <main className='main'>
-        <Home />
+        <Home query={query} />
       </main>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const aboutMe = await getAboutMe();
+  const projects = await getProjects();
+
+  return {
+    props: {
+      query: {
+        aboutMe,
+        projects,
+      },
+    },
+  };
 }
