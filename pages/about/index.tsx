@@ -3,7 +3,7 @@ import Lottie from 'react-lottie';
 import { motion } from 'framer-motion';
 import { fadeIn } from '@/helpers/motion';
 import useTranslation from '@/hooks/useTranslate';
-import astronautAbout from '@/Lotties/astronaut-about.json';
+import astronautAbout from '@/lotties/astronaut-about.json';
 import { defaultLottieOptions } from '@/constants/framer';
 import { AboutType } from '@/types/api';
 import styles from './index.module.scss';
