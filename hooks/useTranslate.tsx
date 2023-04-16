@@ -1,7 +1,6 @@
-import React, { useContext } from 'react';
-import { LanguageContext, lang } from '@/context/LanguageContext';
-import Es from '@/locales/en/translation.js';
-import En from '@/locales/es/translation.js';
+import React from 'react';
+import Es from '@/locales/en/translation';
+import En from '@/locales/es/translation';
 import { useRouter } from 'next/router';
 
 type TranslationType = {
@@ -11,10 +10,10 @@ type TranslationType = {
 export default function useTranslation() {
   const router = useRouter();
   const { locale } = router;
-  const locales: TranslationType = locale === 'en' ? En : Es;
+  const locales: TranslationType = locale === 'en' ? Es : En;
 
   const t = (key: string) => {
-    return locales[key];
+    return locales[key] || key;
   };
 
   return {

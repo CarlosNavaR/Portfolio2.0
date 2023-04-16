@@ -22,7 +22,6 @@ export default function index() {
     value: string;
     label: JSX.Element;
   };
-
   return (
     <span
       role='button'

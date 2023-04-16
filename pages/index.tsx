@@ -1,9 +1,14 @@
 import React from 'react';
 import Head from 'next/head';
-import Hero from '@/pages/hero';
-import Nav from '@/components/navbar';
+import dynamic from 'next/dynamic';
+import Loading from '@/components/loading';
 
-export default function Home() {
+const Home = dynamic(() => import('@/pages/home'), {
+  ssr: false,
+  loading: () => <Loading />,
+});
+
+export default function index() {
   return (
     <>
       <Head>
@@ -28,13 +33,9 @@ export default function Home() {
         <meta name='google' content='nositelinkssearchbox' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+
       <main className='main'>
-        <Nav />
-        <section className='main__container'>
-          <article className='main__hero'>
-            <Hero />
-          </article>
-        </section>
+        <Home />
       </main>
     </>
   );

@@ -2,19 +2,13 @@ import React, { createContext, useState } from 'react';
 import { useRouter } from 'next/router';
 import { ChildrenType } from '@/types/general';
 
-export let lang = 'en';
-
-if (typeof window !== 'undefined') {
-  lang = localStorage.getItem('Buz@@Lang') || 'en';
-}
-
 type ContextType = {
   toggleLanguage: () => void;
   language: string;
 };
 
 export const InitialStateLanguage: ContextType = {
-  language: lang,
+  language: 'es',
   toggleLanguage: () => {},
 };
 
@@ -25,23 +19,25 @@ export default function LanguageProvider({
 }: {
   children: ChildrenType;
 }) {
-  const [language, setLanguage] = useState(InitialStateLanguage.language);
   const router = useRouter();
+  const { locale } = router;
 
   const context: ContextType = {
-    language,
+    language: locale || InitialStateLanguage.language,
     toggleLanguage: () => {
-      localStorage.setItem('Buz@@Lang', language);
-      setLanguage(language === 'en' ? 'es' : 'en');
-
+      localStorage.setItem(
+        'Buz@@Lang',
+        locale || InitialStateLanguage.language
+      );
       const path = router.pathname;
-      router.replace(path, path, { locale: language });
+      const changeLocale = locale === 'es' ? 'en' : 'es';
+      router.replace(path, path, { locale: changeLocale });
     },
   };
 
   return (
     <LanguageContext.Provider value={context}>
-      <div className={`Language--${language}`}>{children}</div>
+      <div className={`Language`}>{children}</div>
     </LanguageContext.Provider>
   );
 }
