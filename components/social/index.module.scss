@@ -1,0 +1,38 @@
+@import '../../styles/theme';
+
+.social_container {
+  display: flex;
+
+  .LinkedIn {
+    border: 1px solid #0e76a8;
+
+    &:hover {
+      background: #0e76a8;
+      color: #fff;
+    }
+  }
+
+  .GitHub {
+    border: 1px solid #333;
+
+    &:hover {
+      background: #333;
+      color: #fff;
+    }
+  }
+
+  a {
+    margin-right: 0.5rem;
+    text-decoration: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include gThemed() {
+      color: buzTheme('textSecondary');
+    }
+  }
+}

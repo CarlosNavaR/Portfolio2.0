@@ -1,0 +1,17 @@
+@import '../../styles/theme';
+
+.box_switch {
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include gThemed() {
+    color: buzTheme('accentMain');
+  }
+
+  &:hover {
+    rotate: 360deg;
+    transition: all 0.6s linear;
+  }
+}

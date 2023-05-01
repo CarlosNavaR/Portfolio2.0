@@ -1,0 +1,27 @@
+{
+  "folders": [
+    {
+      "name": "🚀 Client",
+      "path": "../"
+    },
+    {
+      "name": "🚀 Backend",
+      "path": "../Backend_sanity"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.git": true,
+      "**/Backend_sanity": true
+    },
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/*/**": true,
+      "**/dist/**": true
+    }
+  },
+  "extensions": {
+    "recommendations": ["esbenp.prettier-vscode"]
+  }
+}

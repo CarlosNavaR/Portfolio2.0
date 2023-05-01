@@ -1,0 +1,70 @@
+$themes: (
+  light: (
+    backgroundColor: #fff,
+    backgroundColorSecondary: #fdfdff,
+    primaryMain: #2196f3,
+    secondaryMain: #00bcd4,
+    accentMain: #651fff,
+    textPrimary: #000000de,
+    textSecondary: #000000be,
+    shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px,
+    border: 0.5px solid #ebecf2,
+    invertAccent: #f5a623
+  ),
+  dark: (
+    backgroundColor: #202024,
+    backgroundColorSecondary: #3e3e45,
+    primaryMain: #2196f3,
+    secondaryMain: #00bcd4,
+    accentMain: #f5a623,
+    textPrimary: #ffffffde,
+    textSecondary: #dedede,
+    shadow: rgba(201, 201, 201, 0.1) 0px 2px 6px,
+    border: 0.5px solid #3b3b42,
+    invertAccent: #651fff
+  )
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    transition: all 0.4s linear;
+    .Theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@mixin gThemed() {
+  @each $theme, $map in $themes {
+    transition: all 0.4s linear;
+    :global(.Theme--#{$theme}) & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function buzTheme($key) {
+  @return map-get($theme-map, $key);
+}
