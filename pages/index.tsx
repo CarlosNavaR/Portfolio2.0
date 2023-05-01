@@ -81,7 +81,7 @@ export default function index(props: PropsHomeType) {
         >
           <Lottie
             options={defaultLottieOptions(Rocket)}
-            height={60}
+            height={80}
             width={60}
             style={{
               transform: direction ? 'rotate(180deg)' : 'rotate(0deg)',

@@ -78,7 +78,7 @@
       &:hover {
         cursor: pointer;
         @include gThemed() {
-          background: buzTheme('secondaryMain');
+          background: buzTheme('accentMain');
         }
         color: #fff;
       }

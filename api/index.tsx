@@ -9,7 +9,7 @@ export const getAboutMe = async () => {
 };
 
 export const getProjects = async () => {
-  const query = `*[_type == "project"] | order(_createdAt desc) [0...2]{
+  const query = `*[_type == "project"] | order(_createdAt desc) {
       _id,
       title,
       description,

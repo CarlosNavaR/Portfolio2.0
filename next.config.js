@@ -7,4 +7,7 @@ module.exports = {
     localeDetection: false,
   },
   trailingSlash: true,
+  env: {
+    IMAGE_SANITY_URL: process.env.IMAGE_SANITY_URL,
+  }
 };

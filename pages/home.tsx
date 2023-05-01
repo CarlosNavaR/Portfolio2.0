@@ -3,11 +3,12 @@ import Hero from '@/pages/hero';
 import Nav from '@/components/navbar';
 import About from '@/pages/about';
 import Contact from '@/pages/contact';
+import Projects from '@/pages/projects';
 import { PropsHomeType } from '@/types/api';
 
 export default function index(props: PropsHomeType) {
   const { query } = props;
-  const { aboutMe } = query;
+  const { aboutMe, projects } = query;
   return (
     <>
       <Nav />
@@ -18,8 +19,8 @@ export default function index(props: PropsHomeType) {
         <article className='main__about' id='about'>
           <About aboutMe={aboutMe} />
         </article>
-        <article>
-          <h1>Projects</h1>
+        <article className='main__projects' id='projects'>
+          <Projects projects={projects} />
         </article>
         <article className='main__contact' id='contact'>
           <Contact />
