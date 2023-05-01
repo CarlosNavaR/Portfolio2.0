@@ -1,0 +1,114 @@
+@import '../../Styles/theme';
+
+.project_card {
+  position: relative;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+
+  > .front_Card,
+  > .back_Card {
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 0.5s;
+    transition-property: transform, opacity;
+    height: 15rem;
+  }
+
+  > .front_Card {
+    transform: rotateY(0deg);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  > .back_Card {
+    position: absolute;
+    opacity: 0;
+    top: 0.5rem;
+    transform: rotateY(-180deg);
+    width: 96.55% !important;
+    padding: 0.5rem;
+  }
+
+  &:hover {
+    > .front_Card {
+      transform: rotateY(180deg);
+      opacity: 0;
+    }
+    > .back_Card {
+      opacity: 1;
+      transform: rotateY(0deg);
+    }
+  }
+}
+
+.project_card {
+  position: relative;
+  width: 30rem;
+
+  > .front_Card,
+  > .back_Card {
+    display: block;
+    @include gThemed() {
+      color: buzTheme('textPrimary');
+    }
+    width: inherit;
+  }
+
+  &:hover {
+    --border-angle: 0turn;
+    @include gThemed() {
+      background-image: conic-gradient(
+          from 0,
+          buzTheme('backgroundColorSecondary'),
+          buzTheme('backgroundColorSecondary')
+        ),
+        conic-gradient(
+          from var(--border-angle),
+          transparent 40%,
+          buzTheme('accentMain'),
+          buzTheme('invertAccent')
+        );
+      background-size: calc(100% - 8px) calc(100% - 8px), cover;
+    }
+    background-position: center center;
+    background-repeat: no-repeat;
+    animation: bg-spin 3s linear infinite;
+    cursor: pointer;
+  }
+}
+
+.container_tags {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0 0;
+
+  .tag {
+    padding: 0.5rem;
+    border-radius: 0.3em;
+    font-size: 0.8rem;
+    @include gThemed() {
+      color: buzTheme('backgroundColor');
+    }
+    font-weight: 700;
+  }
+}
+
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 0turn;
+}
+
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}

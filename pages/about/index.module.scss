@@ -1,0 +1,63 @@
+@import '../../styles/theme';
+
+.about_container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+
+  &_image {
+    display: flex;
+    flex: 0.6;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_description {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 2rem;
+    text-align: center;
+
+    h1 {
+      @include gThemed() {
+        color: buzTheme('accentMain');
+      }
+      font-weight: 600;
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    gap: 0;
+    font-size: 1rem;
+    flex-direction: column;
+    height: auto;
+    margin: 1rem 0;
+
+    &_image {
+      flex: 0.6;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    &_description {
+      justify-content: flex-start;
+      flex: 1;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}

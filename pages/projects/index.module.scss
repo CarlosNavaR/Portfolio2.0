@@ -1,0 +1,21 @@
+@import '../../Styles/theme';
+
+.projects_container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+
+  .projects_title {
+    font-size: 2rem;
+    text-align: center;
+    @include gThemed() {
+      color: buzTheme('accentMain');
+    }
+  }
+
+  .projects_list {
+    display: flex;
+    gap: 1rem;
+  }
+}

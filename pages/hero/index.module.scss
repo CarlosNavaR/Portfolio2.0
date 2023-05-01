@@ -1,0 +1,222 @@
+@import '@/styles/theme';
+@import '@/styles/variables';
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  &__content {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    @include gThemed() {
+      color: buzTheme('textPrimary');
+    }
+
+    &__header {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__languages {
+        display: flex;
+        border-radius: 50%;
+        position: absolute;
+
+        &__language {
+          position: relative;
+          border-radius: 50%;
+          padding: 0.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          @include gThemed() {
+            box-shadow: buzTheme('shadow');
+            color: buzTheme('textPrimary');
+          }
+
+          i {
+            font-size: 1.5rem;
+            @include gThemed() {
+              color: buzTheme('backgroundColor');
+            }
+          }
+
+          &:nth-child(odd) {
+            width: 3rem;
+            height: 3rem;
+          }
+
+          &:nth-child(even) {
+            width: 3rem;
+            height: 3rem;
+          }
+
+          &:nth-child(8) {
+            transform: rotate(160deg) translateY(-6rem) rotate(200deg);
+          }
+
+          &:nth-child(7) {
+            transform: rotate(100deg) translateY(-4rem) rotate(-60deg);
+          }
+
+          &:nth-child(6) {
+            transform: rotate(60deg) translateY(-4rem) rotate(-40deg);
+          }
+
+          &:nth-child(5) {
+            transform: rotate(20deg) translateY(-4rem);
+          }
+
+          &:nth-child(4) {
+            transform: rotate(-20deg) translateY(-4em);
+          }
+
+          &:nth-child(3) {
+            transform: rotate(-60deg) translateY(-4rem) rotate(60deg);
+          }
+
+          &:nth-child(2) {
+            transform: rotate(-100deg) translateY(-4rem) rotate(90deg);
+          }
+
+          &:nth-child(1) {
+            transform: rotate(-160deg) translateY(-6rem) rotate(-180deg);
+          }
+        }
+
+        @media (max-width: map-get($grid-breakpoints, sm)) {
+          &__language {
+            &:nth-child(odd) {
+              width: 2rem;
+              height: 2rem;
+
+              i {
+                font-size: 0.8em;
+              }
+            }
+
+            &:nth-child(even) {
+              width: 2rem;
+              height: 2rem;
+              i {
+                font-size: 0.8em;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__about {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .hero_about_title {
+        margin-top: 0.5rem;
+        display: flex;
+        font-size: 4rem;
+        flex-wrap: wrap;
+        font-weight: bold;
+        justify-content: center;
+        @include gThemed() {
+          color: buzTheme('textPrimary');
+        }
+
+        .flip {
+          margin-left: 0.5rem;
+
+          @include gThemed() {
+            color: buzTheme('accentMain');
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          font-size: 2.5rem;
+        }
+      }
+
+      .hero_about_subtitle {
+        margin-top: 0.5rem;
+        display: flex;
+        font-size: 2rem;
+        font-weight: 500;
+        flex-wrap: wrap;
+        justify-content: center;
+        @include gThemed() {
+          color: buzTheme('textSecondary');
+        }
+
+        span {
+          margin-left: 0.5rem;
+        }
+
+        @media screen and (max-width: 768px) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0.5rem 0;
+    bottom: 1rem;
+
+    &__icon {
+      width: 1.7rem;
+      height: 2.65rem;
+      border-radius: 40%;
+
+      @include gThemed() {
+        border: 2px solid buzTheme('textSecondary');
+        background-color: buzTheme('backgroundColor');
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        translate: (-50%, -50%);
+        width: 0.35rem;
+        height: 0.35rem;
+        border-radius: 50%;
+
+        @include gThemed() {
+          background-color: buzTheme('accentMain');
+        }
+        top: 0.6rem;
+        animation: scroll_down 3s infinite;
+      }
+    }
+  }
+}
+
+@keyframes scroll_down {
+  0% {
+    transform: translate(-50%, -50%) translateY(0.3rem);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(2rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(0.3rem);
+  }
+}
