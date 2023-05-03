@@ -16,6 +16,49 @@
 
   .projects_list {
     display: flex;
+    align-items: center;
     gap: 1rem;
+  }
+}
+
+.container_tags {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0 0;
+
+  .tag {
+    padding: 0.5rem;
+    border-radius: 0.3em;
+    font-size: 0.8rem;
+    @include gThemed() {
+      color: buzTheme('backgroundColor');
+    }
+    font-weight: 700;
+  }
+}
+
+.modal_body {
+  .container_links {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.4rem;
+    justify-content: flex-end;
+
+    a {
+      @include gThemed() {
+        color: buzTheme('accentMain');
+      }
+
+      &:hover {
+        @include gThemed() {
+          color: buzTheme('textPrimary');
+        }
+      }
+    }
   }
 }

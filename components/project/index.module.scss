@@ -3,7 +3,9 @@
 .project_card {
   position: relative;
   border-radius: 0.5rem;
-  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   > .front_Card,
   > .back_Card {
@@ -26,7 +28,6 @@
   > .back_Card {
     position: absolute;
     opacity: 0;
-    top: 0.5rem;
     transform: rotateY(-180deg);
     width: 96.55% !important;
     padding: 0.5rem;
@@ -47,10 +48,10 @@
 .project_card {
   position: relative;
   width: 30rem;
+  padding: 0.5rem;
 
   > .front_Card,
   > .back_Card {
-    display: block;
     @include gThemed() {
       color: buzTheme('textPrimary');
     }
@@ -98,27 +99,6 @@
       color: buzTheme('backgroundColor');
     }
     font-weight: 700;
-  }
-}
-
-.modal_body {
-  .container_links {
-    display: flex;
-    gap: 0.5rem;
-    font-size: 1.4rem;
-    justify-content: flex-end;
-
-    a {
-      @include gThemed() {
-        color: buzTheme('accentMain');
-      }
-
-      &:hover {
-        @include gThemed() {
-          color: buzTheme('textPrimary');
-        }
-      }
-    }
   }
 }
 
