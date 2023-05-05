@@ -1,4 +1,6 @@
 import React, { Suspense } from 'react';
+import { Analytics } from '@vercel/analytics/react';
+
 import LanguageProvider from '@/context/LanguageContext';
 import ThemeProvider from '@/context/ThemeContext';
 import '@/styles/normalize.css';
@@ -12,6 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider>
         <LanguageProvider>
           <Component {...pageProps} />
+          <Analytics />
         </LanguageProvider>
       </ThemeProvider>
     </Suspense>

@@ -151,8 +151,8 @@ export default function index() {
               </span>
             </h2>
           </div>
+          <SocialContainer />
         </div>
-        <SocialContainer />
       </motion.div>
       <div className={styles.hero__scroll}>
         <div className={styles.hero__scroll__icon} />
