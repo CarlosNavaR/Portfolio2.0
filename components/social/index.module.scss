@@ -21,6 +21,15 @@
     }
   }
 
+  .CV {
+    border: 1px solid #f5a623;
+
+    &:hover {
+      background: #f5a623;
+      color: #fff;
+    }
+  }
+
   a {
     margin-right: 0.5rem;
     text-decoration: none;

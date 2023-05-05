@@ -21,10 +21,13 @@ export default function index(props: PropsHomeType) {
   const [direction, setDirection] = useState(false);
   const { scrollYProgress } = useScroll();
 
-  // TODO: Remove this code and validate the correct locale
   useEffect(() => {
-    localStorage.removeItem('Buz@@Theme');
-    localStorage.removeItem('Buz@@Lang');
+    if (!localStorage.getItem('Buz@@Flag')) {
+      localStorage.removeItem('Buz@@Theme');
+      localStorage.removeItem('Buz@@Lang');
+    }
+
+    localStorage.setItem('Buz@@Flag', 'true');
   }, []);
 
   useEffect(() => {
