@@ -30,7 +30,7 @@ export default function index({ id }: { id: string }) {
             aria-label='heart'
             onMouseEnter={() => setChangeIcon(!changeIcon)}
           >
-            {!changeIcon ? '❤️' : '🚀'}
+            {!changeIcon ? ' ❤️ ' : ' 🚀 '}
           </span>
           {t('text.by')} Carlos Nava
         </p>
