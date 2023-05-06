@@ -23,7 +23,6 @@ $themes: (
 
 @mixin themed() {
   @each $theme, $map in $themes {
-    transition: all 0.4s linear;
     .Theme--#{$theme} & {
       $theme-map: () !global;
       @each $key, $submap in $map {
@@ -43,7 +42,6 @@ $themes: (
 
 @mixin gThemed() {
   @each $theme, $map in $themes {
-    transition: all 0.4s linear;
     :global(.Theme--#{$theme}) & {
       $theme-map: () !global;
       @each $key, $submap in $map {
