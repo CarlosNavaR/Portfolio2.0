@@ -1,8 +1,9 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { BsGithub } from 'react-icons/bs';
 import { TfiWorld } from 'react-icons/tfi';
 import Modal from '@/components/modal';
+import Badge from '@/components/badge';
 import { ProjectsType } from '@/types/api';
 import Project from '@/components/project';
 import useTranslation from '@/hooks/useTranslate';
@@ -23,7 +24,7 @@ export default function index({ projects }: { projects: ProjectsType[] }) {
   const listRef = useRef<HTMLDivElement>(null);
   const [listWidth, setListWidth] = useState(0);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleResize = () => {
       if (!listRef.current) return;
       const { scrollWidth, offsetWidth } = listRef.current;
@@ -65,7 +66,7 @@ export default function index({ projects }: { projects: ProjectsType[] }) {
                     setOpen(!open);
                   }}
                 >
-                  <Project project={project} key={project?._id} />
+                  <Project project={project} key={`even-${project?._id}`} />
                 </div>
               );
           })}
@@ -85,7 +86,7 @@ export default function index({ projects }: { projects: ProjectsType[] }) {
                     setOpen(!open);
                   }}
                 >
-                  <Project project={project} key={project?._id} />
+                  <Project project={project} key={`odd-${project?._id}`} />
                 </div>
               );
           })}
@@ -99,20 +100,15 @@ export default function index({ projects }: { projects: ProjectsType[] }) {
         content={
           <div className={styles.modal_body}>
             <img src={imageUrl} alt={project?.title} />
-            <div className={styles.container_tags}>
-              {project?.tags?.map(tag => {
-                const { title: tagTitle, color } = tag;
-                return (
-                  <span
-                    key={tagTitle}
-                    className={styles.tag}
-                    style={{ backgroundColor: color }}
-                  >
-                    {tagTitle}
-                  </span>
-                );
-              })}
-            </div>
+            {project?.tags?.length && (
+              <div className={styles.container_tags}>
+                {project?.tags?.map(tag => {
+                  if (tag !== null)
+                    return <Badge styles_tag={styles.tag} tag={tag} />;
+                })}
+              </div>
+            )}
+
             <p>{project.description}</p>
             <div className={styles.container_links}>
               {project?.sourceCode && (

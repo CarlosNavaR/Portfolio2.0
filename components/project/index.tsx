@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ProjectsType } from '@/types/api';
+import Badge from '@/components/badge';
 
 import styles from './index.module.scss';
 
@@ -19,16 +20,8 @@ export default function index({ project }: { project: ProjectsType }) {
           {project?.tags?.length && (
             <div className={styles.container_tags}>
               {project?.tags?.map(tag => {
-                const { title: tagTitle, color } = tag;
-                return (
-                  <span
-                    key={tagTitle}
-                    className={styles.tag}
-                    style={{ backgroundColor: color }}
-                  >
-                    {tagTitle}
-                  </span>
-                );
+                if (tag !== null)
+                  return <Badge styles_tag={styles.tag} tag={tag} />;
               })}
             </div>
           )}
