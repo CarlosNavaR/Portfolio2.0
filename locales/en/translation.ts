@@ -18,4 +18,6 @@ export default {
     "I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
   'text.made': 'Made with',
   'text.by': 'by',
+  'Go back': 'Go back to the main page',
+  '404': 'Are you lost in space?',
 };

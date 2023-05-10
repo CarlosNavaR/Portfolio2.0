@@ -17,4 +17,6 @@ export default {
     'Actualmente estoy buscando nuevas oportunidades. Si tienes alguna pregunta o simplemente quieres saludar, ¡haré todo lo posible para responderte!',
   'text.made': 'Hecho con',
   'text.by': 'por',
+  'Go back': 'Regresar a la página principal',
+  '404': '¿Estás perdido en el espacio?',
 };
