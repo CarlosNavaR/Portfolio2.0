@@ -1,10 +1,10 @@
 import React from 'react';
-import Hero from '@/pages/hero';
+import Hero from '@/views/hero';
 import Nav from '@/components/navbar';
-import About from '@/pages/about';
+import About from '@/views/about';
 // import Contact from '@/pages/contact';
-import Projects from '@/pages/projects';
-import Footer from '@/pages/footer';
+import Projects from '@/views/projects';
+import Footer from '@/views/footer';
 import { PropsHomeType } from '@/types/api';
 
 export default function index(props: PropsHomeType) {
