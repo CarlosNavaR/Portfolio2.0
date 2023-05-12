@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { MotionValue, motion, useScroll } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import Lottie from 'react-lottie';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
@@ -9,7 +9,7 @@ import { PropsHomeType } from '@/types/api';
 import Rocket from '@/lotties/rocket_particles.json';
 import { defaultLottieOptions } from '@/constants/framer';
 
-const Home = dynamic(() => import('@/pages/home'), {
+const Home = dynamic(() => import('@/views/home'), {
   ssr: false,
   loading: () => <Loading />,
 });
