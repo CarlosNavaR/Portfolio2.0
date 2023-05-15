@@ -26,6 +26,11 @@ export const links: LinkType[] = [
     url: '#contact',
     text: 'Contact',
   },
+  {
+    id: '5',
+    url: '/blog',
+    text: 'Blog',
+  },
 ];
 
 export default function index() {
@@ -33,7 +38,7 @@ export default function index() {
 
   const router = useRouter();
   const { pathname } = router;
-  const isProjectMenu = pathname === '/projects';
+  const isNotHome = pathname !== '/';
 
   const { t } = useTranslate();
 
@@ -51,7 +56,7 @@ export default function index() {
             showLinks ? styles.isOpened : styles.isClosed
           }`}
         >
-          {!isProjectMenu &&
+          {!isNotHome &&
             links &&
             links?.map(link => {
               const { id, url, text } = link;
@@ -61,7 +66,7 @@ export default function index() {
                   className={styles.menu_item}
                   onClick={() => setShowLinks(false)}
                 >
-                  <a href={`${url}`}>{t(text)}</a>
+                  <Link href={`${url}`}>{t(text)}</Link>
                 </li>
               );
             })}

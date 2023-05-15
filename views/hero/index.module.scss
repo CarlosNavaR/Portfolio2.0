@@ -32,7 +32,7 @@
         &__language {
           position: relative;
           border-radius: 50%;
-          padding: 0.5rem;
+          padding: 0.8rem;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -43,36 +43,36 @@
           }
 
           i {
-            font-size: 1.5rem;
+            font-size: 2.4rem;
             @include gThemed() {
               color: buzTheme('backgroundColor');
             }
           }
 
           &:nth-child(odd) {
-            width: 3rem;
-            height: 3rem;
+            width: 4.8rem;
+            height: 4.8rem;
           }
 
           &:nth-child(even) {
-            width: 3rem;
-            height: 3rem;
+            width: 4.8rem;
+            height: 4.8rem;
           }
 
           &:nth-child(8) {
-            transform: rotate(160deg) translateY(-6rem) rotate(200deg);
+            transform: rotate(160deg) translateY(-9.6rem) rotate(200deg);
           }
 
           &:nth-child(7) {
-            transform: rotate(100deg) translateY(-4rem) rotate(-60deg);
+            transform: rotate(100deg) translateY(-6.4rem) rotate(-60deg);
           }
 
           &:nth-child(6) {
-            transform: rotate(60deg) translateY(-4rem) rotate(-40deg);
+            transform: rotate(60deg) translateY(-6.4rem) rotate(-40deg);
           }
 
           &:nth-child(5) {
-            transform: rotate(20deg) translateY(-4rem);
+            transform: rotate(20deg) translateY(-6.4rem);
           }
 
           &:nth-child(4) {
@@ -80,23 +80,23 @@
           }
 
           &:nth-child(3) {
-            transform: rotate(-60deg) translateY(-4rem) rotate(60deg);
+            transform: rotate(-60deg) translateY(-6.4rem) rotate(60deg);
           }
 
           &:nth-child(2) {
-            transform: rotate(-100deg) translateY(-4rem) rotate(90deg);
+            transform: rotate(-100deg) translateY(-6.4rem) rotate(90deg);
           }
 
           &:nth-child(1) {
-            transform: rotate(-160deg) translateY(-6rem) rotate(-180deg);
+            transform: rotate(-160deg) translateY(-9.6rem) rotate(-180deg);
           }
         }
 
         @media (max-width: map-get($grid-breakpoints, sm)) {
           &__language {
             &:nth-child(odd) {
-              width: 2rem;
-              height: 2rem;
+              width: 3.2rem;
+              height: 3.2rem;
 
               i {
                 font-size: 0.8em;
@@ -104,8 +104,8 @@
             }
 
             &:nth-child(even) {
-              width: 2rem;
-              height: 2rem;
+              width: 3.2rem;
+              height: 3.2rem;
               i {
                 font-size: 0.8em;
               }
@@ -122,9 +122,9 @@
       align-items: center;
 
       .hero_about_title {
-        margin-top: 0.5rem;
+        margin-top: 1.4rem;
         display: flex;
-        font-size: 4rem;
+        font-size: 6.4rem;
         flex-wrap: wrap;
         font-weight: bold;
         justify-content: center;
@@ -133,7 +133,7 @@
         }
 
         .flip {
-          margin-left: 0.5rem;
+          margin-left: 1.4rem;
 
           @include gThemed() {
             color: buzTheme('accentMain');
@@ -141,14 +141,14 @@
         }
 
         @media screen and (max-width: 768px) {
-          font-size: 2.5rem;
+          font-size: 5.2rem;
         }
       }
 
       .hero_about_subtitle {
-        margin-top: 0.5rem;
+        margin-top: 1.4rem;
         display: flex;
-        font-size: 2rem;
+        font-size: 3.2rem;
         font-weight: 500;
         flex-wrap: wrap;
         justify-content: center;
@@ -157,11 +157,11 @@
         }
 
         span {
-          margin-left: 0.5rem;
+          margin-left: 1.4rem;
         }
 
         @media screen and (max-width: 768px) {
-          font-size: 1.5rem;
+          font-size: 2.4rem;
         }
       }
     }
@@ -174,14 +174,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 2.6rem;
     text-align: center;
-    padding: 0.5rem 0;
+    padding: 1rem 0;
     bottom: 3%;
 
     &__icon {
-      width: 1.7rem;
-      height: 2.65rem;
+      width: 2.8rem;
+      height: 4.2rem;
       border-radius: 60px;
 
       @include gThemed() {
@@ -193,14 +193,14 @@
         content: '';
         position: absolute;
         translate: (-50%, -50%);
-        width: 0.35rem;
-        height: 0.35rem;
+        width: 0.56rem;
+        height: 0.56rem;
         border-radius: 50%;
 
         @include gThemed() {
           background-color: buzTheme('accentMain');
         }
-        top: 0.6rem;
+        top: 1rem;
         animation: scroll_down 3s infinite;
       }
     }
@@ -213,13 +213,13 @@
 
 @keyframes scroll_down {
   0% {
-    transform: translate(-50%, -50%) translateY(0.3rem);
+    transform: translate(-50%, -50%) translateY(0.48rem);
   }
   50% {
-    transform: translate(-50%, -50%) translateY(2.5rem);
+    transform: translate(-50%, -50%) translateY(4rem);
     opacity: 0;
   }
   100% {
-    transform: translate(-50%, -50%) translateY(0.3rem);
+    transform: translate(-50%, -50%) translateY(0.48rem);
   }
 }

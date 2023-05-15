@@ -18,8 +18,8 @@
     height: max-content;
     max-width: 600px;
     width: 100%;
-    border-radius: 0.6rem;
-    padding: 1.2rem;
+    border-radius: 0.8rem;
+    padding: 1.8rem;
     display: flex;
     flex-direction: column;
 
@@ -35,8 +35,8 @@
       align-items: center;
 
       .modal_close {
-        font-size: 1.2rem;
-        border-radius: 0.5rem;
+        font-size: 1.8rem;
+        border-radius: 0.8rem;
         font-weight: 900;
         padding: 0.5rem;
         cursor: pointer;
@@ -49,12 +49,12 @@
     .modal_body {
       flex: 1;
       overflow-y: auto;
-      padding: 1rem 0;
+      padding: 1.6rem 0;
 
       img {
         width: 100%;
         height: auto;
-        border-radius: 0.5rem;
+        border-radius: 0.8rem;
         @include gThemed() {
           box-shadow: buzTheme('shadow');
         }
@@ -64,8 +64,8 @@
     .modal_footer {
       display: flex;
       justify-content: flex-end;
-      margin-top: 1rem;
-      padding-top: 1rem;
+      margin-top: 1.6rem;
+      padding-top: 1.6rem;
       border-top: 1px solid #e8e8e8;
       bottom: 0;
     }

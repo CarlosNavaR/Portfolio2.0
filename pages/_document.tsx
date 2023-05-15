@@ -10,6 +10,7 @@ export default function Document() {
           href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css'
         />
       </Head>
+
       <body>
         <Main />
         <NextScript />
