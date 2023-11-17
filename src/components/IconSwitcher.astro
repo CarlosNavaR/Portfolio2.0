@@ -1,0 +1,54 @@
+---
+import { Icon } from 'astro-icon';
+
+const {
+  class:
+    className = 'text-accent dark:text-accent rounded-lg text-sm p-2.5 inline-flex items-center',
+} = Astro.props;
+---
+
+<button aria-label='theme-button' id='theme-button' class={className}>
+  <Icon name='tabler:moon' class='w-5 h-5 hidden dark:flex' />
+  <Icon name='tabler:sun' class='w-5 h-5 dark:hidden' />
+</button>
+
+<script is:inline>
+  let isDark = false;
+  const themeButton = document.getElementById('theme-button');
+
+  const theme = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme');
+    }
+
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    }
+
+    return 'light';
+  })();
+
+  if (theme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    isDark = true;
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    isDark = false;
+  }
+
+  window.localStorage.setItem('theme', theme);
+
+  const darkModeHandler = () => {
+    if (isDark) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.theme = 'dark';
+      isDark = false;
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.theme = 'light';
+      isDark = true;
+    }
+  };
+
+  themeButton.addEventListener('click', darkModeHandler);
+</script>

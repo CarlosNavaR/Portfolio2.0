@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Base/index.astro';
+import { AppConfig } from '../utils/AppConfig';
+
+const { title } = AppConfig;
+const { description } = AppConfig;
+---
+
+<Layout
+  head={{
+    title,
+    description,
+  }}
+>
+  <p>Nav</p>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+</style>

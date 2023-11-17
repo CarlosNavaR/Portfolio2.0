@@ -1,0 +1,63 @@
+---
+import { AppConfig } from '../../utils/AppConfig';
+import ToggleTheme from '../../components/IconSwitcher.astro';
+
+export interface IProps {
+  head: {
+    title: string;
+    description: string;
+  };
+}
+
+const {
+  head: { title, description },
+} = Astro.props as IProps;
+---
+
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>{title}</title>
+    <meta name='description' content={description} />
+    <meta name='author' content={AppConfig.author} />
+    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+  </head>
+  <body class='bg-body dark:bg-body'>
+    <ToggleTheme iconClass='w-6 h-6 md:w-5 md:h-5 md:inline-block' />
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --color-bg: 255 255 255;
+    --color-border: 255 255 255;
+    --color-box: 255 255 255;
+    --box-border: 229 231 235;
+    --box-sd: 226 232 240 / 0.5;
+    --heading-1: 23 37 84;
+    --heading-2: 31 41 55;
+    --heading-3: 55 65 81;
+    --accent: 101, 31, 255;
+  }
+
+  [data-theme='dark'] body {
+    --color-bg: 32, 32, 36;
+    --color-box: 17 24 39;
+    --box-border: 243 244 246/0.1;
+    --box-sd: transparent;
+
+    --heading-1: 255 255 255;
+    --heading-2: 243 244 246;
+    --heading-3: 209 213 219;
+    --accent: 245, 166, 35;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Raleway', sans-serif;
+  }
+</style>
