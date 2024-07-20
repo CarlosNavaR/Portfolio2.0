@@ -2,7 +2,7 @@
 
 .project_card {
   position: relative;
-  border-radius: 0.5rem;
+  border-radius: 0.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +12,7 @@
     transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition-duration: 0.5s;
     transition-property: transform, opacity;
-    height: 15rem;
+    height: 24rem;
   }
 
   > .front_Card {
@@ -30,7 +30,7 @@
     opacity: 0;
     transform: rotateY(-180deg);
     width: 96.55% !important;
-    padding: 0.5rem;
+    padding: 0.8rem;
   }
 
   &:hover {
@@ -47,8 +47,8 @@
 
 .project_card {
   position: relative;
-  width: 28rem;
-  padding: 0.5rem;
+  width: clamp(48rem, 15rem + 2vw, 50rem);
+  padding: 0.8rem;
 
   > .front_Card,
   > .back_Card {
@@ -83,18 +83,18 @@
 
 .container_tags {
   width: 100%;
-  height: 2rem;
+  height: 3.2rem;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
-  margin: 0.5rem 0 0;
+  gap: 0.8rem;
+  margin: 0.8rem 0 0;
 
   .tag {
     padding: 0.5rem;
     border-radius: 0.3em;
-    font-size: 0.8rem;
+    font-size: 1.4rem;
     @include gThemed() {
       color: buzTheme('backgroundColor');
     }

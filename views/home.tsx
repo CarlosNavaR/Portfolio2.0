@@ -1,6 +1,4 @@
 import React from 'react';
-import Nav from '@/components/navbar';
-// import Contact from '@/pages/contact';
 import About from './about';
 import Hero from './hero';
 import Projects from './projects';
@@ -12,7 +10,6 @@ export default function index(props: PropsHomeType) {
   const { aboutMe, projects } = query;
   return (
     <>
-      <Nav />
       <section className='main__container'>
         <article className='main__hero' id='hero'>
           <Hero />
@@ -20,9 +17,6 @@ export default function index(props: PropsHomeType) {
         <article className='main__about' id='about'>
           <About aboutMe={aboutMe} />
         </article>
-        {/* <article className='main__contact' id='contact'>
-          <Contact />
-        </article> */}
       </section>
       <section className='main__projects' id='projects'>
         <Projects projects={projects} />
